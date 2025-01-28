@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskForge", "TaskForge\TaskForge.csproj", "{78588404-C691-4EF4-AA31-35084DAB61CC}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TaskForge_Db", "TaskForge_Db\TaskForge_Db.sqlproj", "{DF8A55BA-6D39-402B-A051-F65FCF8341A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78588404-C691-4EF4-AA31-35084DAB61CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78588404-C691-4EF4-AA31-35084DAB61CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78588404-C691-4EF4-AA31-35084DAB61CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78588404-C691-4EF4-AA31-35084DAB61CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8A55BA-6D39-402B-A051-F65FCF8341A2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

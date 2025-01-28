@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Jobs] (Table)
+       [dbo].[Jobs].[idx_Jobs_name] (Index)
+       [dbo].[Jobs].[idx_Jobs_status] (Index)
+       [dbo].[Jobs].[idx_Jobs_location] (Index)
+       [dbo].[Jobs].[idx_Jobs_user_id] (Index)
+       [dbo].[Jobs].[idx_Jobs_created_date] (Index)
+       [dbo].[Jobs].[idx_Jobs_updated_date] (Index)
+       [dbo].[Jobs].[idx_Jobs_due_date] (Index)
+       [dbo].[Roles] (Table)
+       [dbo].[UserRoles] (Table)
+       [dbo].[UserRoles].[idx_UserRoles_user_id] (Index)
+       [dbo].[UserRoles].[idx_UserRoles_role_id] (Index)
+       [dbo].[Users] (Table)
+       [dbo].[Users].[idx_users_name] (Index)
+       [dbo].[FK_Jobs_Users] (Foreign Key)
+       [dbo].[FK_UserRoles_Users] (Foreign Key)
+       [dbo].[FK_UserRoles_Roles] (Foreign Key)
+
+** Supporting actions

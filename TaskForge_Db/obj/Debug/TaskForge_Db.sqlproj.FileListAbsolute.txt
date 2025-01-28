@@ -1,0 +1,6 @@
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\bin\Debug\TaskForge_Db.dacpac
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\bin\Debug\TaskForge_Db.dll
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\bin\Debug\TaskForge_Db.pdb
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.sqlproj.AssemblyReference.cache
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.dll
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.pdb
