@@ -82,7 +82,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Username\": \"Dog\",\r\n    \"Password\": \"dog123\",\r\n    \"Email\": \"dogman@canine.dog\"\r\n}",
+					"raw": "{\r\n    \"Username\": \"Guy\",\r\n    \"Password\": \"password123\",\r\n    \"Email\": \"guydude@guy.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
