@@ -92,6 +92,28 @@
 				"url": "http://localhost:5272/create-user"
 			},
 			"response": []
+		},
+		{
+			"name": "getUser",
+			"id": "574713c3-37dc-48cb-a114-b63131874707",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/get-user"
+			},
+			"response": []
 		}
 	]
 }
