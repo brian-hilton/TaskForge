@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "460c9dd1-69c1-4856-84e6-520a26a7d2a1",
+		"name": "TaskForge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postJob",
+			"id": "cbddb71f-9a49-4a6e-8fc1-0fcb49c16a91",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"walk the dogs\",\r\n    \"Status\": \"not doned\",\r\n    \"Location\": \"my house\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/jobs"
+			},
+			"response": []
+		},
+		{
+			"name": "assignJob",
+			"id": "28c93f90-cff4-4e13-ba82-af1875dddbe8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": 1,\r\n    \"JobId\": 1 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/jobs/assign"
+			},
+			"response": []
+		},
+		{
+			"name": "addRole",
+			"id": "c65e9dee-c631-4fca-ac63-c4d524228fd5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": \"1\",\r\n    \"RoleId\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/user/add-role"
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"id": "069b25ed-f5c7-4cb4-bdb9-a4137ba7b356",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\": \"Dog\",\r\n    \"Password\": \"dog123\",\r\n    \"Email\": \"dogman@canine.dog\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/create-user"
+			},
+			"response": []
+		}
+	]
+}
