@@ -130,6 +130,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getUserJobs",
+			"id": "7821e9ac-2b80-4058-979c-5752cebebc12",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/user/jobs?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"user",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
