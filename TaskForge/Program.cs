@@ -85,7 +85,18 @@ namespace TaskForge
                 return ($"Assigned job {jobId} to user {userId}");
             });
 
-            app.MapPost("", () => { });
+
+
+
+
+
+            app.MapPatch("/jobs/update-job", (UpdateJobRequest jobRequest, int jobId) => 
+            {
+                var repo = new DbRepository(dbConnection);
+                var updatedJob = repo.UpdateJob(jobRequest, jobId);
+                return updatedJob;
+
+            });
 
             app.Run();
         }
