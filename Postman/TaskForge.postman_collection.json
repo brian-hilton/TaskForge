@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "45cb0d32-0f33-41ea-86fd-838800b367e4",
+		"name": "TaskForge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24472340"
+	},
+	"item": [
+		{
+			"name": "postJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"walk the dogs\",\r\n    \"Status\": \"not doned\",\r\n    \"Location\": \"my house\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assignJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": 1,\r\n    \"JobId\": 1 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/jobs/assign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addRole",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": \"1\",\r\n    \"RoleId\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/user/add-role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"user",
+						"add-role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\": \"Dog\",\r\n    \"Password\": \"dog123\",\r\n    \"Email\": \"dogman@canine.dog\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/create-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

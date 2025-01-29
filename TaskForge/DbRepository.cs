@@ -46,13 +46,15 @@ namespace TaskForge
             return users;
         }
 
-        // Can return a List of Roles if more than one Role exist for a user
+        // Can return a List of Roles associated with userId
         public List<Role> GetUserRole(int id)
         {
             using var db = new SqlConnection(_databaseConnection);
 
-            var roles = db.Query<Role>(@"select R.* from dbo.UserRoles as UR 
-                                        join dbo.Roles as R on UR.role_id = R.id where UR.[user_id] = @UserId",
+            var roles = db.Query<Role>(@"select R.* 
+                                        from dbo.UserRoles as UR 
+                                        join dbo.Roles as R on UR.role_id = R.id 
+                                        where UR.[user_id] = @UserId",
                                         new { UserId = id }).ToList();
 
             return roles;
@@ -172,6 +174,15 @@ namespace TaskForge
 
             transaction.Commit();
 
+        }
+
+        public List<Job> GetUserJobs(int userId)
+        {
+            using var db = new SqlConnection( _databaseConnection);
+
+            var userJobs = db.Query<Job>(@" select * from dbo.Jobs where id = @UserId", new { UserId = userId }).ToList();
+
+            return userJobs;
         }
 
 

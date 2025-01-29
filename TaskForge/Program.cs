@@ -13,15 +13,46 @@ namespace TaskForge
             string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
             var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
+            app.MapGet("/", () => "Task Forge!");
 
-            app.MapPost("/jobs", (Job job) =>
+            // Return user from user table based off passed id in the url
+            app.MapGet("/get-user", (int userId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var user = repo.GetUser(userId);
+                return user;
+            });
+
+            // Get all jobs for a user; return list of jobs
+            app.MapGet("/user/jobs", (int userId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var userJobs = repo.GetUserJobs(userId);
+                return userJobs;
+            });
+
+            // Get all roles associated with user
+            app.MapGet("/user/roles", (int userId) => 
+            {
+                var repo = new DbRepository(dbConnection);
+                var userRoles = repo.GetUserRole(userId);
+                return userRoles;
+            });
+
+
+
+
+
+
+            // Create job item in job table; return job object
+            app.MapPost("/jobs/create-job", (Job job) =>
             {
                 var repo = new DbRepository(dbConnection);
                 var newJob = repo.CreateJob(job.Name, job.Status, job.Location);
                 return newJob;
             });
 
+            // Add a role into role table; return role object
             app.MapPost("/user/add-role", (CreateRoleRequest roleRequest) =>
             {
                 var repo = new DbRepository(dbConnection);
@@ -29,9 +60,33 @@ namespace TaskForge
                 return newRole;
             });
 
+            // Create a user using request model; return user object
+            app.MapPost("/create-user", (CreateUserRequest createUserRequest) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var newUser = repo.CreateUser(createUserRequest.Username, createUserRequest.Password, createUserRequest.Email);
+                return newUser;
+            });
 
+            // Create job and assign to user id; return job object
+            app.MapPost("/user/new-job", (Job job, int userId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var newJob = repo.CreateJob(job.Name, job.Status, job.Location);
+                repo.AssignJob(newJob.Id, userId);
+                return newJob;
+            });
 
-            
+            // Assign an existing job to a user; 
+            app.MapPost("/jobs", (int jobId, int userId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                repo.AssignJob(jobId, userId);
+                return ($"Assigned job {jobId} to user {userId}");
+            });
+
+            app.MapPost("", () => { });
+
             app.Run();
         }
     }

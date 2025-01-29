@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\brian\\source\\repos\\TaskForge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\requestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\requestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "TaskForge\\Models\\RequestModels.cs",
               "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\RequestModels.cs",
               "RelativeToolTip": "TaskForge\\Models\\RequestModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T04:05:05.922Z",
               "EditorCaption": ""
@@ -64,12 +64,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Program.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
+              "RelativeToolTip": "TaskForge\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T01:34:26.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DbRepository.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\DbRepository.cs",
               "RelativeDocumentMoniker": "TaskForge\\DbRepository.cs",
               "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\DbRepository.cs",
               "RelativeToolTip": "TaskForge\\DbRepository.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAAwHsAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwDAAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T02:31:27.194Z",
               "EditorCaption": ""
@@ -84,12 +97,11 @@
               "RelativeToolTip": "TaskForge\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T02:27:39.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T02:27:39.997Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "TaskForge\\Models\\UserRole.cs",
@@ -97,12 +109,11 @@
               "RelativeToolTip": "TaskForge\\Models\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:25:20.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T02:25:20.019Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Role.cs",
               "RelativeDocumentMoniker": "TaskForge\\Models\\Role.cs",
@@ -110,25 +121,24 @@
               "RelativeToolTip": "TaskForge\\Models\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:24:41.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T02:24:41.403Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Job.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Job.cs",
               "RelativeDocumentMoniker": "TaskForge\\Models\\Job.cs",
               "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Job.cs",
               "RelativeToolTip": "TaskForge\\Models\\Job.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T02:23:01.185Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\User.cs",
               "RelativeDocumentMoniker": "TaskForge\\Models\\User.cs",
@@ -137,19 +147,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T02:19:52.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Program.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
-              "RelativeToolTip": "TaskForge\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T01:34:26.956Z",
               "EditorCaption": ""
             }
           ]

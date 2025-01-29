@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; } = "Incomplete";
         public string Location { get; set; }
         public int? UserId {  get; set; }
         public DateTime CreatedDate { get; set; }
