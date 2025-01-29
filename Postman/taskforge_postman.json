@@ -201,14 +201,65 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "assignJobToUser",
 			"id": "95c4f3f9-04a3-42d5-ad4d-e8d2a6057338",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/jobs?jobId=4&userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "4"
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserRoles",
+			"id": "d01aa0f2-d77e-4b00-9dd1-537d5a2e28d1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/user/roles?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"user",
+						"roles"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
 			},
 			"response": []
 		}
