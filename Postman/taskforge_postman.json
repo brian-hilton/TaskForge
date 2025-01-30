@@ -24,7 +24,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/get-user?userId=1",
+					"raw": "http://localhost:5272/get-user?userId=4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -36,7 +36,7 @@
 					"query": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "4"
 						}
 					]
 				}
