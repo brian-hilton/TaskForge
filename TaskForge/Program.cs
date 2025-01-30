@@ -13,7 +13,7 @@ namespace TaskForge
             string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
             var app = builder.Build();
 
-            app.MapGet("/", () => "Task Forge!");
+            app.MapGet("/", () => "Task Forge.");
 
             // Return user from user table based off passed id in the url
             app.MapGet("/get-user", (int userId) =>
