@@ -106,7 +106,7 @@ namespace TaskForge
             return userRole;
         }
 
-        public void UpdateDateModified(string tableName, int userId)
+        public void UpdateDateModified(string tableName, int id)
         {
             var validTableNames = new List<string> { "Users", "Jobs" };
 
@@ -123,8 +123,8 @@ namespace TaskForge
 
             int rowsAffected = db.Execute($@"
                                             update {tableName} SET updated_date = @CurrentDate
-                                            where id = @UserId" ,
-                                            new { CurrentDate = currentDate, UserId = userId },
+                                            where id = @Id" ,
+                                            new { CurrentDate = currentDate, Id = id },
                                             transaction);
 
             if (rowsAffected != 1) {
@@ -152,7 +152,6 @@ namespace TaskForge
 
         }
 
-
         public void AssignJob(int jobId, int userId)
         {
             using var db = new SqlConnection(_databaseConnection);
@@ -178,13 +177,105 @@ namespace TaskForge
 
         public List<Job> GetUserJobs(int userId)
         {
-            using var db = new SqlConnection( _databaseConnection);
+            using var db = new SqlConnection(_databaseConnection);
 
             var userJobs = db.Query<Job>(@" select * from dbo.Jobs where id = @UserId", new { UserId = userId }).ToList();
 
             return userJobs;
         }
 
+        public Job GetJobById(int jobId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+
+            var job = db.QueryFirstOrDefault<Job>(@"
+                                                    SELECT 
+                                                        id AS Id,
+                                                        name AS Name,
+                                                        status AS Status,
+                                                        location AS Location,
+                                                        user_id AS UserId,
+                                                        created_date AS CreatedDate,
+                                                        updated_date AS UpdatedDate,
+                                                        due_date AS DueDate
+                                                    FROM dbo.Jobs
+                                                    WHERE id = @JobId", new { JobId = jobId });
+
+            if (job == null)
+            {
+                throw new Exception($"Job with ID {jobId} could not be found");
+            }
+
+            return job;
+        }
+
+        public Job UpdateJob(UpdateJobRequest updatedJob, int jobId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
+            var transaction = db.BeginTransaction();
+
+            // Begin query and initialize empty parameters object
+            var query = "update Jobs set ";
+            var parameters = new DynamicParameters();
+            bool firstField = true;
+
+            // Check for each field and append to query & parameters
+            if (!string.IsNullOrEmpty(updatedJob.Name))
+            {
+                query += $"{(firstField ? "" : ", ")}name = @Name";
+                parameters.Add("Name", updatedJob.Name);
+                firstField = false;
+            }
+
+            if (!string.IsNullOrEmpty(updatedJob.Location))
+            {
+                query += $"{(firstField ? "" : ", ")}location = @Location";
+                parameters.Add("Location", updatedJob.Location);
+                firstField = false;
+            }
+
+            if (!string.IsNullOrEmpty(updatedJob.Status))
+            {
+                query += $"{(firstField ? "" : ", ")}status = @Status";
+                parameters.Add("Status", updatedJob.Status);
+                firstField = false;
+            }
+
+            if (updatedJob.DueDate.HasValue) 
+            {
+                query += $"{(firstField ? "" : ", ")}due_date = @DueDate";
+                parameters.Add("DueDate", updatedJob.DueDate);
+                firstField = false;
+            }
+
+            // If we did not find any fields in the passed job request object
+            if (firstField)
+            {
+                throw new Exception("Update attempted with empty job request");
+            }
+
+            // Append WHERE clause to query
+            query += " where Id = @Id";
+            parameters.Add("Id", jobId);
+
+            int rowsAffected = db.Execute(query, parameters, transaction);
+
+            if (rowsAffected != 1)
+            {
+                transaction.Rollback();
+                throw new Exception("Could not update job.");
+            }
+                        
+
+            transaction.Commit();
+
+            UpdateDateModified("Jobs", jobId);
+            
+            var job = GetJobById(jobId);
+
+            return job;
+        }
 
 
 
