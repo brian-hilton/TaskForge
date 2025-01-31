@@ -354,7 +354,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"\",\r\n    \"password\": \"\",\r\n    \"email\": \"\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"password\": \"notBob123\",\r\n    \"email\": \"thisisbob@bob.bob\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
