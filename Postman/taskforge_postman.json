@@ -6,6 +6,35 @@
 	},
 	"item": [
 		{
+			"name": "getJob",
+			"id": "7b5da32f-2bc3-4bb8-ada5-38609d422446",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/jobs?jobId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "getUser",
 			"id": "574713c3-37dc-48cb-a114-b63131874707",
 			"protocolProfileBehavior": {
@@ -323,7 +352,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/jobs/update-job?jobId=1",
+					"raw": "http://localhost:5272/jobs/update-job?jobId=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -336,7 +365,7 @@
 					"query": [
 						{
 							"key": "jobId",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}
