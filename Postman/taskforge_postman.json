@@ -362,14 +362,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/user/update-user?userId=1",
+					"raw": "http://localhost:5272/users/update-user?userId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5272",
 					"path": [
-						"user",
+						"users",
 						"update-user"
 					],
 					"query": [
