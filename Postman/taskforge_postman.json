@@ -412,6 +412,36 @@
 			"response": []
 		},
 		{
+			"name": "deleteJob",
+			"id": "0c7798a8-152c-4bbb-91e7-20be4656222a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/jobs/delete-job?userId=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs",
+						"delete-job"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "deleteUser",
 			"id": "2f662788-da5a-41aa-b55c-1765d1cc25d1",
 			"protocolProfileBehavior": {
