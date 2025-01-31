@@ -1,11 +1,141 @@
 {
 	"info": {
-		"_postman_id": "45cb0d32-0f33-41ea-86fd-838800b367e4",
+		"_postman_id": "460c9dd1-69c1-4856-84e6-520a26a7d2a1",
 		"name": "TaskForge",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24472340"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24472340",
+		"_collection_link": "https://backend-api-development.postman.co/workspace/Backend-API-Development~af6dd3f3-e71c-4b0d-8867-3ab688022112/collection/24472340-460c9dd1-69c1-4856-84e6-520a26a7d2a1?action=share&source=collection_link&creator=24472340"
 	},
 	"item": [
+		{
+			"name": "getUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/get-user?userId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"get-user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/user/jobs?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"user",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserRoles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Name</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{id}}</td>\r",
+							"            <td>{{name}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/user/roles?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"user",
+						"roles"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "postJob",
 			"request": {
@@ -20,17 +150,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:5272/jobs",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs"
-					]
-				}
+				"url": "http://localhost:5272/jobs/create-job"
 			},
 			"response": []
 		},
@@ -48,18 +168,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:5272/jobs/assign",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs",
-						"assign"
-					]
-				}
+				"url": "http://localhost:5272/jobs/assign"
 			},
 			"response": []
 		},
@@ -77,29 +186,36 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:5272/user/add-role",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"user",
-						"add-role"
-					]
-				}
+				"url": "http://localhost:5272/user/add-role"
 			},
 			"response": []
 		},
 		{
-			"name": "createUser",
+			"name": "postUser",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Username\": \"Dog\",\r\n    \"Password\": \"dog123\",\r\n    \"Email\": \"dogman@canine.dog\"\r\n}",
+					"raw": "{\r\n    \"Username\": \"Guy\",\r\n    \"Password\": \"password123\",\r\n    \"Email\": \"guydude@guy.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5272/create-user"
+			},
+			"response": []
+		},
+		{
+			"name": "postUserJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Paint\",\r\n    \"Status\": \"\",\r\n    \"Location\": \"12-113 North Houston\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,14 +223,120 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/create-user",
+					"raw": "http://localhost:5272/user/new-job?userId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5272",
 					"path": [
-						"create-user"
+						"user",
+						"new-job"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assignJobToUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/jobs?jobId=4&userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "4"
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateJob",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Walk the Dogs!\",\r\n    \"Location\": \"My House\",\r\n    \"Status\": \"Done\",\r\n    \"DueDate\": \"2025-05-05T12:12:34Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/jobs/update-job?jobId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs",
+						"update-job"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"password\": \"notBob123\",\r\n    \"email\": \"thisisbob@bob.bob\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5272/users/update-user?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"users",
+						"update-user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
 					]
 				}
 			},

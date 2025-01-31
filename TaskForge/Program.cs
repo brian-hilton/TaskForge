@@ -98,6 +98,13 @@ namespace TaskForge
 
             });
 
+            app.MapPatch("/users/update-user", (UpdateUserRequest userRequest, int userId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var updatedUser = repo.UpdateUser(userRequest, userId);
+                return updatedUser;
+            });
+
             app.Run();
         }
     }

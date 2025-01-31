@@ -277,6 +277,70 @@ namespace TaskForge
             return job;
         }
 
+        public User UpdateUser(UpdateUserRequest updatedUser, int userId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
+            var transaction = db.BeginTransaction();
+
+            // Begin query and initialize empty parameters object
+            var query = "update Users set ";
+            var parameters = new DynamicParameters();
+            bool firstField = true;
+
+            // Check for each field and append to query & parameters
+            if (!string.IsNullOrEmpty(updatedUser.Name))
+            {
+                query += $"{(firstField ? "" : ", ")}name = @Name";
+                parameters.Add("Name", updatedUser.Name);
+                firstField = false;
+            }
+
+            if (!string.IsNullOrEmpty(updatedUser.Password))
+            {
+                query += $"{(firstField ? "" : ", ")}password = @Password";
+                parameters.Add("Password", updatedUser.Password);
+                firstField = false;
+            }
+
+            if (!string.IsNullOrEmpty(updatedUser.Email))
+            {
+                query += $"{(firstField ? "" : ", ")}email = @Email";
+                parameters.Add("Email", updatedUser.Email);
+                firstField = false;
+            }
+
+            // If we did not find any fields in the passed job request object
+            if (firstField)
+            {
+                throw new Exception("Update attempted with empty job request");
+            }
+
+            // Append WHERE clause to query
+            query += " where Id = @Id";
+            parameters.Add("Id", userId);
+
+            int rowsAffected = db.Execute(query, parameters, transaction);
+
+            if (rowsAffected != 1)
+            {
+                transaction.Rollback();
+                throw new Exception("Could not update job.");
+            }
+
+
+            transaction.Commit();
+
+            UpdateDateModified("Users", userId);
+
+            var user = GetUser(userId);
+
+            if (user != null) { return user; }
+
+            return null;
+
+        }
+
 
 
     }
