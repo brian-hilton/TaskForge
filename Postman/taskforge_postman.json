@@ -142,7 +142,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5272/jobs?jobId=4&userId=1",
+					"raw": "http://localhost:5272/jobs?jobId=3&userId=6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,11 +154,11 @@
 					"query": [
 						{
 							"key": "jobId",
-							"value": "4"
+							"value": "3"
 						},
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "6"
 						}
 					]
 				}
