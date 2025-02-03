@@ -547,6 +547,19 @@
 					"response": []
 				},
 				{
+					"name": "getAllCrews",
+					"id": "054914c3-6716-4804-9f5a-d224d54a8315",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5272/crews/all-crews"
+					},
+					"response": []
+				},
+				{
 					"name": "postCrew",
 					"id": "7f902efc-ef29-426c-9b77-056bb7956783",
 					"protocolProfileBehavior": {
