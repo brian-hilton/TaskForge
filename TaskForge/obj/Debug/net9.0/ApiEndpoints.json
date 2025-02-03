@@ -42,6 +42,236 @@
     ]
   },
   {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__2",
+    "RelativePath": "crews/{crewId}/add-member",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.CrewMember",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__3",
+    "RelativePath": "crews/{crewId}/delete-member",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__0",
+    "RelativePath": "crews/{crewId}/get-all-members",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[TaskForge.Models.CrewMember, TaskForge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__1",
+    "RelativePath": "crews/create-crew",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.Crew",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "RelativePath": "crews/delete-all-user-memberships",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__3",
+    "RelativePath": "crews/delete-crew",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__1",
+    "RelativePath": "crews/get-all-crews-for-user",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[TaskForge.Models.CrewMember, TaskForge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__0",
+    "RelativePath": "crews/get-crew",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.Crew",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__2",
+    "RelativePath": "crews/update-crew",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCrewRequest",
+        "Type": "TaskForge.Models.UpdateCrewRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.Crew",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapUserEndpoints\u003Eb__1",
     "RelativePath": "get-top-users",

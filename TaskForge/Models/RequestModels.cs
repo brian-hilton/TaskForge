@@ -29,9 +29,9 @@ namespace TaskForge.Models
 
     public class UpdateUserRequest 
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public string? Name { get; set; }
+        public string? Password { get; set; }
+        public string? Email { get; set; }
     }
 
     public class UpdateJobRequest
@@ -40,5 +40,11 @@ namespace TaskForge.Models
         public string? Location { get; set; }
         public string? Status { get; set; }
         public DateTime? DueDate { get; set; } = DateTime.UtcNow;
+    }
+
+    public class UpdateCrewRequest
+    {
+        public string? Name { get; set; }
+        public int? SupervisorId { get; set; } = 0;
     }
 }

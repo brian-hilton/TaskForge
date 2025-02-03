@@ -16,7 +16,8 @@ namespace TaskForge
 
             app.MapUserEndpoints();
             app.MapJobEndpoints();
-            //app.MapCrewEndpoints();
+            app.MapCrewEndpoints();
+            app.MapCrewMemberEndpoints();
 
             //app.MapGet("/", () => "Task Forge.");
 
