@@ -39,6 +39,13 @@ namespace TaskForge
                 return userRoles;
             });
 
+            app.MapGet("/jobs", (int jobId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var job = repo.GetJobById(jobId);
+                return job;
+            });
+
 
 
 
@@ -105,6 +112,29 @@ namespace TaskForge
                 return updatedUser;
             });
 
+            app.MapPatch("/jobs/clear-job", (int jobId) =>
+            {
+                var repo = new DbRepository(dbConnection);
+                var clearedJob = repo.ClearJob(jobId);
+                return clearedJob;
+            });
+
+
+
+
+            // Delete user with their id
+            app.MapDelete("/users/delete-user", (int userId) => 
+            {
+                var repo = new DbRepository(dbConnection);
+                repo.DeleteUser(userId);
+            });
+
+            // Delete job with jobId
+            app.MapDelete("/jobs/delete-job", (int jobId) => 
+            {
+                var repo = new DbRepository(dbConnection);
+                repo.DeleteUser(jobId);
+            });
             app.Run();
         }
     }

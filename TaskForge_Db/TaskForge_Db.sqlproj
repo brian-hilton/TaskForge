@@ -63,5 +63,7 @@
     <Build Include="Tables\Roles.sql" />
     <Build Include="Tables\UserRoles.sql" />
     <Build Include="Tables\Jobs.sql" />
+    <Build Include="Tables\Crews.sql" />
+    <Build Include="Tables\CrewMembers.sql" />
   </ItemGroup>
 </Project>

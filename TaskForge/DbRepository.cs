@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
+using System.Data.Common;
 using System.Data.SqlClient;
 using TaskForge.Models;
 
@@ -209,6 +210,30 @@ namespace TaskForge
             return job;
         }
 
+        public Job ClearJob(int jobId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
+            var transaction = db.BeginTransaction();
+
+            var currentDate = DateTime.UtcNow;
+
+            int rowsAffected = db.Execute(@"UPDATE Jobs set 
+                                            name = '',
+                                            status = '',
+                                            location = '',
+                                            updated_date = @CurrentDate,
+                                            due_date = NULL
+                                            where id = @JobId" , new { CurrentDate = currentDate, JobId = jobId }, transaction);
+
+            if (rowsAffected != 1)
+            {
+                transaction.Rollback(); throw new Exception("Could not clear job");
+            }
+
+            transaction.Commit();
+            return GetJobById(jobId);
+        }
         public Job UpdateJob(UpdateJobRequest updatedJob, int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
@@ -339,6 +364,42 @@ namespace TaskForge
 
             return null;
 
+        }
+
+        public void DeleteUser(int userId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
+            var transaction = db.BeginTransaction();
+
+            int rowsAffected = db.Execute(@"
+                                            delete from dbo.Users 
+                                            where id = @UserId", new { UserId = userId }, transaction);
+
+            if (rowsAffected != 1) 
+            { 
+                transaction.Rollback(); throw new Exception($"Could not delete user with id: {userId}");
+            }
+
+            transaction.Commit();
+        }
+
+        public void DeleteJob(int jobId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
+            var transaction = db.BeginTransaction();
+
+            int rowsAffected = db.Execute(@"delete from dbo.Jobs 
+                                            where id = @JobId", new { @JobId = jobId}, transaction);
+
+            if (rowsAffected != 0)
+            {
+                transaction.Rollback();
+                throw new Exception($"Could not delete job with id {jobId}");
+            }
+
+            transaction.Commit();
         }
 
 
