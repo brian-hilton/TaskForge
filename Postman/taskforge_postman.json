@@ -569,7 +569,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Floors",
+							"raw": "http://localhost:5272/crews/create-crew?name=Dogs",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +582,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Floors"
+									"value": "Dogs"
 								}
 							]
 						}
@@ -734,7 +734,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=2&role=worker",
+							"raw": "http://localhost:5272/crews/add-member?crewId=4&userId=3&role=supervisor",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -747,15 +747,15 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "2"
+									"value": "4"
 								},
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "3"
 								},
 								{
 									"key": "role",
-									"value": "worker"
+									"value": "supervisor"
 								}
 							]
 						}
@@ -806,7 +806,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/delete-all-user-memberships?userId=1",
+							"raw": "http://localhost:5272/crews/delete-all-user-memberships?userId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -819,7 +819,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						}
