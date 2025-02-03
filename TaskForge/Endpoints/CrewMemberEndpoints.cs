@@ -12,7 +12,7 @@ namespace TaskForge.Endpoints
         {
             string dbConnection = app.Configuration.GetConnectionString("DbConnection")!;
 
-            app.MapGet("crews/{crewId}/get-all-members", (int crewId) =>
+            app.MapGet("crews/get-all-members", (int crewId) =>
             {
                 var repo = new CrewMemberRepository(dbConnection);
                 var crewMembers = repo.GetAllCrewMembersByCrew(crewId);
@@ -22,23 +22,25 @@ namespace TaskForge.Endpoints
             app.MapGet("crews/get-all-crews-for-user", (int userId) =>
             {
                 var repo = new CrewMemberRepository(dbConnection);
-                var crewList = repo.GetAllCrewMembersByCrew(userId);
+                var crewList = repo.GetAllCrewsByUser(userId);
                 return crewList;
             });
 
-            app.MapPost("crews/{crewId}/add-member", (int crewId, int userId, string role) =>
+            app.MapPost("crews/add-member", (int crewId, int userId, string role) =>
             {
                 var repo = new CrewMemberRepository(dbConnection);
                 var newCrewMember = repo.CreateCrewMember(crewId, userId, role);
                 return newCrewMember;
             });
 
-            app.MapDelete("crews/{crewId}/delete-member", (int crewId, int userId) =>
+            // Remove user from crew
+            app.MapDelete("crews/delete-member", (int crewId, int userId) =>
             {
                 var repo = new CrewMemberRepository(dbConnection);
                 repo.DeleteCrewMember(crewId, userId);
             });
 
+            // Delete all crew memberships that belong to a single user
             app.MapDelete("crews/delete-all-user-memberships", (int userId) =>
             {
                 var repo = new CrewMemberRepository(dbConnection);

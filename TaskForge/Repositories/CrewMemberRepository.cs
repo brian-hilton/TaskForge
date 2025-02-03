@@ -58,13 +58,15 @@ namespace TaskForge.Repositories
             var transaction = db.BeginTransaction();
 
             int rowsAffected = db.Execute(@"delete from dbo.CrewMembers
-                                            where crew_id = @CrewId and user_id = UserId", new { CrewId = crewId, UserId = userId }, transaction);
+                                            where crew_id = @CrewId and user_id = @UserId", new { CrewId = crewId, UserId = userId }, transaction);
 
             if (rowsAffected != 1)
             {
                 transaction.Rollback();
                 throw new Exception("Could not delete crew member.");
             }
+
+            transaction.Commit();
         }
 
         // Remove user from any crews they are in
@@ -75,13 +77,15 @@ namespace TaskForge.Repositories
             var transaction = db.BeginTransaction();
 
             int rowsAffected = db.Execute(@"delete from dbo.CrewMembers
-                                            where user_id = UserId", new { UserId = userId }, transaction);
+                                            where user_id = @UserId", new { UserId = userId }, transaction);
 
-            if (rowsAffected != 1)
+            if (rowsAffected < 1)
             {
                 transaction.Rollback();
                 throw new Exception("Could not delete user from all crews.");
             }
+
+            transaction.Commit();
         }
     }
 }

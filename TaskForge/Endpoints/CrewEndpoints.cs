@@ -19,6 +19,13 @@ namespace TaskForge.Endpoints
                 return crew;
             });
 
+            app.MapGet("crews/all-crews", () =>
+            {
+                var repo = new CrewRepository(dbConnection);
+                var crews = repo.GetAllCrews();
+                return crews;
+            });
+
             app.MapPost("crews/create-crew", (string name) =>
             {
                 var repo = new CrewRepository(dbConnection);

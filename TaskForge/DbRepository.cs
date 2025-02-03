@@ -18,7 +18,7 @@ namespace TaskForge
 
         public void UpdateDateModified(string tableName, int id)
         {
-            var validTableNames = new List<string> { "Users", "Jobs" };
+            var validTableNames = new List<string> { "Users", "Jobs", "Crews" };
 
             if (!validTableNames.Contains(tableName))
             {

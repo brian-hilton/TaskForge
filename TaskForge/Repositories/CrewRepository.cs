@@ -41,26 +41,33 @@ namespace TaskForge.Repositories
             return crew;
         }
 
+        public List<Crew>? GetAllCrews()
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            var crews = db.Query<Crew>("select * from dbo.Crews").ToList();
+            return crews;
+        }
+
         public Crew UpdateCrew(UpdateCrewRequest updateCrewRequest, int crewId)
         {
             using var db = new SqlConnection(_databaseConnection);
             db.Open();
             var transaction = db.BeginTransaction();
 
-            var query = "update Crews set";
+            var query = "update Crews set ";
             var parameters = new DynamicParameters();
             bool firstField = true;
 
             if (string.IsNullOrEmpty(updateCrewRequest.Name))
             {
-                query += $"{(firstField ? "" : ",")}name = @Name";
+                query += $"{(firstField ? "" : ", ")}name = @Name";
                 parameters.Add("Name", updateCrewRequest.Name);
                 firstField = false;
             }
 
             if (updateCrewRequest.SupervisorId != 0)
             {
-                query += $"{(firstField ? "" : ",")}supervisor_id = @SupervisorId";
+                query += $"{(firstField ? "" : ", ")}supervisor_id = @SupervisorId";
                 parameters.Add("SupervisorId", updateCrewRequest.SupervisorId);
                 firstField = false;
             }
@@ -90,7 +97,7 @@ namespace TaskForge.Repositories
             db.Open();
             var transaction = db.BeginTransaction();
 
-            int rowsAffected = db.Execute("@delete from dbo.Crews where id = @CrewId", new { CrewId = crewId }, transaction);
+            int rowsAffected = db.Execute(@"delete from dbo.Crews where id = @CrewId", new { CrewId = crewId }, transaction);
 
             if (rowsAffected != 1)
             {  

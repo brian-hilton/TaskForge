@@ -44,7 +44,7 @@
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapCrewMemberEndpoints\u003Eb__2",
-    "RelativePath": "crews/{crewId}/add-member",
+    "RelativePath": "crews/add-member",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
@@ -76,49 +76,16 @@
     ]
   },
   {
-    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__3",
-    "RelativePath": "crews/{crewId}/delete-member",
-    "HttpMethod": "DELETE",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "crewId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__0",
-    "RelativePath": "crews/{crewId}/get-all-members",
+    "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__1",
+    "RelativePath": "crews/all-crews",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "crewId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[TaskForge.Models.CrewMember, TaskForge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[TaskForge.Models.Crew, TaskForge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -128,7 +95,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewEndpoints\u003Eb__1",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__2",
     "RelativePath": "crews/create-crew",
     "HttpMethod": "POST",
     "IsController": false,
@@ -174,7 +141,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewEndpoints\u003Eb__3",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__4",
     "RelativePath": "crews/delete-crew",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -182,6 +149,33 @@
     "Parameters": [
       {
         "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__3",
+    "RelativePath": "crews/delete-member",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -204,6 +198,30 @@
     "Parameters": [
       {
         "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__0",
+    "RelativePath": "crews/get-all-members",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -244,7 +262,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewEndpoints\u003Eb__2",
+    "Method": "\u003CMapCrewEndpoints\u003Eb__3",
     "RelativePath": "crews/update-crew",
     "HttpMethod": "PATCH",
     "IsController": false,
