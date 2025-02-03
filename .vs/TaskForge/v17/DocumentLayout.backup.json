@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\brian\\source\\repos\\TaskForge\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\endpoints\\userendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\endpoints\\userendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\endpoints\\jobendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\endpoints\\jobendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\repositories\\crewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\repositories\\crewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\repositories\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\repositories\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\job.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\requestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\requestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|c:\\users\\brian\\source\\repos\\taskforge\\taskforge\\endpoints\\crewendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78588404-C691-4EF4-AA31-35084DAB61CC}|TaskForge\\TaskForge.csproj|solutionrelative:taskforge\\endpoints\\crewendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,102 +50,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RequestModels.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\RequestModels.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Models\\RequestModels.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\RequestModels.cs",
-              "RelativeToolTip": "TaskForge\\Models\\RequestModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T04:05:05.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Program.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
-              "RelativeToolTip": "TaskForge\\Program.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAgwF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T01:34:26.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "DbRepository.cs",
               "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\DbRepository.cs",
               "RelativeDocumentMoniker": "TaskForge\\DbRepository.cs",
               "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\DbRepository.cs",
               "RelativeToolTip": "TaskForge\\DbRepository.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAIwOsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T02:31:27.194Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\appsettings.json",
-              "RelativeDocumentMoniker": "TaskForge\\appsettings.json",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\appsettings.json",
-              "RelativeToolTip": "TaskForge\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T02:27:39.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\UserRole.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Models\\UserRole.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\UserRole.cs",
-              "RelativeToolTip": "TaskForge\\Models\\UserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:25:20.019Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Models\\Role.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Role.cs",
-              "RelativeToolTip": "TaskForge\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:24:41.403Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Job.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Job.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Models\\Job.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\Job.cs",
-              "RelativeToolTip": "TaskForge\\Models\\Job.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "TaskForge\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAowDgAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:23:01.185Z",
+              "WhenOpened": "2025-02-03T06:28:22.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\User.cs",
-              "RelativeDocumentMoniker": "TaskForge\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Models\\User.cs",
-              "RelativeToolTip": "TaskForge\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Title": "JobRepository.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\JobRepository.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Repositories\\JobRepository.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\JobRepository.cs",
+              "RelativeToolTip": "TaskForge\\Repositories\\JobRepository.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAuwLQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T02:19:52.213Z"
+              "WhenOpened": "2025-02-03T06:28:17.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CrewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\CrewRepository.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Repositories\\CrewRepository.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Repositories\\CrewRepository.cs",
+              "RelativeToolTip": "TaskForge\\Repositories\\CrewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T06:28:15.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Program.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Program.cs",
+              "RelativeToolTip": "TaskForge\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwBQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T08:20:46.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\UserEndpoints.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Endpoints\\UserEndpoints.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\UserEndpoints.cs",
+              "RelativeToolTip": "TaskForge\\Endpoints\\UserEndpoints.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T08:21:24.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JobEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\JobEndpoints.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Endpoints\\JobEndpoints.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\JobEndpoints.cs",
+              "RelativeToolTip": "TaskForge\\Endpoints\\JobEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T08:28:20.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CrewEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\CrewEndpoints.cs",
+              "RelativeDocumentMoniker": "TaskForge\\Endpoints\\CrewEndpoints.cs",
+              "ToolTip": "C:\\Users\\brian\\source\\repos\\TaskForge\\TaskForge\\Endpoints\\CrewEndpoints.cs",
+              "RelativeToolTip": "TaskForge\\Endpoints\\CrewEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T08:28:19.666Z",
+              "EditorCaption": ""
             }
           ]
         }
