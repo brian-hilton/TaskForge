@@ -412,6 +412,36 @@
 			"response": []
 		},
 		{
+			"name": "clearJob",
+			"id": "5fceab96-5b18-4e37-a8f9-8583630243b7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5272/jobs/clear-job?jobId=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5272",
+					"path": [
+						"jobs",
+						"clear-job"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "deleteJob",
 			"id": "0c7798a8-152c-4bbb-91e7-20be4656222a",
 			"protocolProfileBehavior": {
