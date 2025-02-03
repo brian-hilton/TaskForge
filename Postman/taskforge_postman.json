@@ -577,14 +577,41 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "updateCrew",
 					"id": "78a80d2a-0656-43bb-86d1-e0ccdc039c5b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Painters\",\r\n    \"SupervisorId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5272/crews/update-crew?crewId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"update-crew"
+							],
+							"query": [
+								{
+									"key": "crewId",
+									"value": "1"
+								}
+							]
+						}
 					},
 					"response": []
 				}
