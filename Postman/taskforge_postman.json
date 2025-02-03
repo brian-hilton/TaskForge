@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"Take the dogs on a walk\",\r\n    \"Status\": \"Almost done\",\r\n    \"Location\": \"Dog house\"\r\n}",
+					"raw": "{\r\n    \"Name\": \"Make krabby patties\",\r\n    \"Status\": \"Not even started yet\",\r\n    \"Location\": \"Krusty Krab\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,7 +82,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Username\": \"Guy\",\r\n    \"Password\": \"password123\",\r\n    \"Email\": \"guydude@guy.com\"\r\n}",
+					"raw": "{\r\n    \"Username\": \"Spongebob\",\r\n    \"Password\": \"gary123\",\r\n    \"Email\": \"spongebob@krustykrab.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
