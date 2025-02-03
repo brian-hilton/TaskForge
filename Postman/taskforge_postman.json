@@ -650,7 +650,51 @@
 		},
 		{
 			"name": "CrewMember",
-			"item": [],
+			"item": [
+				{
+					"name": "getAllCrewMembers",
+					"id": "2f9bc5ec-7213-4729-a333-b8b393171a46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/1/get-all-members?crewId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"1",
+								"get-all-members"
+							],
+							"query": [
+								{
+									"key": "crewId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "a82934b6-d5ec-48a9-b085-7508f508fd42",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "fa17a0ba-0414-41a3-8aba-6555a148f185"
 		}
 	]
