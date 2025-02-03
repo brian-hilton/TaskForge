@@ -695,6 +695,36 @@
 					"response": []
 				},
 				{
+					"name": "getAllCrewsForUser",
+					"id": "bc485feb-1d0b-4355-8ae9-101f696353f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/get-all-crews-for-user?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"get-all-crews-for-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "postMember",
 					"id": "a82934b6-d5ec-48a9-b085-7508f508fd42",
 					"protocolProfileBehavior": {
@@ -733,16 +763,16 @@
 					"response": []
 				},
 				{
-					"name": "getAllCrewsForUser",
-					"id": "bc485feb-1d0b-4355-8ae9-101f696353f1",
+					"name": "deleteMember",
+					"id": "db919d8c-fe4e-4017-921f-f3af098d4786",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/get-all-crews-for-user?userId=1",
+							"raw": "http://localhost:5272/crews/delete-member?crewId=2&userId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -750,9 +780,13 @@
 							"port": "5272",
 							"path": [
 								"crews",
-								"get-all-crews-for-user"
+								"delete-member"
 							],
 							"query": [
+								{
+									"key": "crewId",
+									"value": "2"
+								},
 								{
 									"key": "userId",
 									"value": "1"
