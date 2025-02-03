@@ -691,7 +691,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=1&role=worker",
+							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=2&role=worker",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -708,7 +708,7 @@
 								},
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "2"
 								},
 								{
 									"key": "role",
@@ -716,6 +716,18 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "bc485feb-1d0b-4355-8ae9-101f696353f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
