@@ -720,14 +720,32 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getAllCrewsForUser",
 					"id": "bc485feb-1d0b-4355-8ae9-101f696353f1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/get-all-crews-for-user?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"get-all-crews-for-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
 					},
 					"response": []
 				}
