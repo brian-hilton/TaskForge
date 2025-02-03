@@ -526,7 +526,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/get-crew?crewId=1",
+							"raw": "http://localhost:5272/crews/get-crew?crewId=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -539,7 +539,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -547,7 +547,7 @@
 					"response": []
 				},
 				{
-					"name": "createCrew",
+					"name": "postCrew",
 					"id": "7f902efc-ef29-426c-9b77-056bb7956783",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -556,7 +556,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=\"New Crew\"",
+							"raw": "http://localhost:5272/crews/create-crew?name=New Crew",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -569,7 +569,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "\"New Crew\""
+									"value": "New Crew"
 								}
 							]
 						}
