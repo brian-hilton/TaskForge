@@ -661,7 +661,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/1/get-all-members?crewId=1",
+							"raw": "http://localhost:5272/crews/get-all-members?crewId=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -669,13 +669,12 @@
 							"port": "5272",
 							"path": [
 								"crews",
-								"1",
 								"get-all-members"
 							],
 							"query": [
 								{
 									"key": "crewId",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -692,7 +691,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/2/add-member?crewId=2&userId=1&role=worker",
+							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=1&role=worker",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -700,7 +699,6 @@
 							"port": "5272",
 							"path": [
 								"crews",
-								"2",
 								"add-member"
 							],
 							"query": [
