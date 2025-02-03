@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"walk the dogs\",\r\n    \"Status\": \"not doned\",\r\n    \"Location\": \"my house\"\r\n}",
+					"raw": "{\r\n    \"Name\": \"Take the dogs on a walk\",\r\n    \"Status\": \"Almost done\",\r\n    \"Location\": \"Dog house\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
