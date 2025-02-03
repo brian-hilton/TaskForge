@@ -7,504 +7,534 @@
 	"item": [
 		{
 			"name": "Job",
-			"item": [],
+			"item": [
+				{
+					"name": "postJob",
+					"id": "cbddb71f-9a49-4a6e-8fc1-0fcb49c16a91",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Make krabby patties\",\r\n    \"Status\": \"Not even started yet\",\r\n    \"Location\": \"Krusty Krab\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/jobs/create-job"
+					},
+					"response": []
+				},
+				{
+					"name": "assignJob",
+					"id": "28c93f90-cff4-4e13-ba82-af1875dddbe8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserId\": 1,\r\n    \"JobId\": 1 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/jobs/assign"
+					},
+					"response": []
+				},
+				{
+					"name": "postUserJob",
+					"id": "74c4516b-825b-4269-a3f7-81a40bc7fd6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Paint\",\r\n    \"Status\": \"\",\r\n    \"Location\": \"12-113 North Houston\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5272/user/new-job?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"user",
+								"new-job"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignJobToUser",
+					"id": "95c4f3f9-04a3-42d5-ad4d-e8d2a6057338",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/jobs?jobId=8&userId=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "8"
+								},
+								{
+									"key": "userId",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJob",
+					"id": "7b5da32f-2bc3-4bb8-ada5-38609d422446",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/jobs?jobId=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserJobs",
+					"id": "7821e9ac-2b80-4058-979c-5752cebebc12",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/user/jobs?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"user",
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"id": "88957e62-468a-41f7-900f-8eeb74e23944",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Make 10 Krabby Patties\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"Status\": \"Not Done\",\r\n    \"DueDate\": \"2025-08-05T12:12:34Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5272/jobs/update-job?jobId=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs",
+								"update-job"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearJob",
+					"id": "5fceab96-5b18-4e37-a8f9-8583630243b7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/jobs/clear-job?jobId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs",
+								"clear-job"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"id": "0c7798a8-152c-4bbb-91e7-20be4656222a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/jobs/delete-job?userId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs",
+								"delete-job"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"id": "d650ac92-9630-4832-9d51-21695ee367ee"
 		},
 		{
-			"name": "postJob",
-			"id": "cbddb71f-9a49-4a6e-8fc1-0fcb49c16a91",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"Make krabby patties\",\r\n    \"Status\": \"Not even started yet\",\r\n    \"Location\": \"Krusty Krab\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://localhost:5272/jobs/create-job"
-			},
-			"response": []
-		},
-		{
-			"name": "assignJob",
-			"id": "28c93f90-cff4-4e13-ba82-af1875dddbe8",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"UserId\": 1,\r\n    \"JobId\": 1 \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://localhost:5272/jobs/assign"
-			},
-			"response": []
-		},
-		{
-			"name": "addRole",
-			"id": "c65e9dee-c631-4fca-ac63-c4d524228fd5",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"UserId\": \"1\",\r\n    \"RoleId\": \"3\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://localhost:5272/user/add-role"
-			},
-			"response": []
-		},
-		{
-			"name": "postUser",
-			"id": "069b25ed-f5c7-4cb4-bdb9-a4137ba7b356",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Username\": \"Spongebob\",\r\n    \"Password\": \"gary123\",\r\n    \"Email\": \"spongebob@krustykrab.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://localhost:5272/create-user"
-			},
-			"response": []
-		},
-		{
-			"name": "postUserJob",
-			"id": "74c4516b-825b-4269-a3f7-81a40bc7fd6d",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"Paint\",\r\n    \"Status\": \"\",\r\n    \"Location\": \"12-113 North Houston\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5272/user/new-job?userId=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"user",
-						"new-job"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "assignJobToUser",
-			"id": "95c4f3f9-04a3-42d5-ad4d-e8d2a6057338",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/jobs?jobId=8&userId=9",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs"
-					],
-					"query": [
-						{
-							"key": "jobId",
-							"value": "8"
-						},
-						{
-							"key": "userId",
-							"value": "9"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getJob",
-			"id": "7b5da32f-2bc3-4bb8-ada5-38609d422446",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/jobs?jobId=8",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs"
-					],
-					"query": [
-						{
-							"key": "jobId",
-							"value": "8"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getUser",
-			"id": "574713c3-37dc-48cb-a114-b63131874707",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5272/get-user?userId=9",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"get-user"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "9"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getUserJobs",
-			"id": "7821e9ac-2b80-4058-979c-5752cebebc12",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/user/jobs?userId=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"user",
-						"jobs"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getUserRoles",
-			"event": [
+			"name": "User",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "a9da6f1a-b612-432c-8b4c-02ebf8df2dc2",
-						"exec": [
-							"var template = `\r",
-							"<style type=\"text/css\">\r",
-							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
-							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
-							"    .tftable tr {background-color:#ffffff;}\r",
-							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
-							"    .tftable tr:hover {background-color:#e0ffff;}\r",
-							"</style>\r",
-							"\r",
-							"<table class=\"tftable\" border=\"1\">\r",
-							"    <tr>\r",
-							"        <th>ID</th>\r",
-							"        <th>Name</th>\r",
-							"    </tr>\r",
-							"    \r",
-							"    {{#each response}}\r",
-							"        <tr>\r",
-							"            <td>{{id}}</td>\r",
-							"            <td>{{name}}</td>\r",
-							"        </tr>\r",
-							"    {{/each}}\r",
-							"</table>\r",
-							"`;\r",
-							"\r",
-							"function constructVisualizerPayload() {\r",
-							"    return {response: pm.response.json()}\r",
-							"}\r",
-							"\r",
-							"pm.visualizer.set(template, constructVisualizerPayload());"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
+					"name": "addRole",
+					"id": "c65e9dee-c631-4fca-ac63-c4d524228fd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserId\": \"1\",\r\n    \"RoleId\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/user/add-role"
+					},
+					"response": []
+				},
+				{
+					"name": "postUser",
+					"id": "069b25ed-f5c7-4cb4-bdb9-a4137ba7b356",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"Spongebob\",\r\n    \"Password\": \"gary123\",\r\n    \"Email\": \"spongebob@krustykrab.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/create-user"
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"id": "574713c3-37dc-48cb-a114-b63131874707",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5272/get-user?userId=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"get-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserRoles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a9da6f1a-b612-432c-8b4c-02ebf8df2dc2",
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Name</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{id}}</td>\r",
+									"            <td>{{name}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "d01aa0f2-d77e-4b00-9dd1-537d5a2e28d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/user/roles?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"user",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"id": "93d1aed2-5ed5-41d0-8bc1-d2206eedfe45",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Spongebob Squarepants\",\r\n    \"password\": \"gary123\",\r\n    \"email\": \"spongebob@krustykrab.net\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5272/users/update-user?userId=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"users",
+								"update-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"id": "2f662788-da5a-41aa-b55c-1765d1cc25d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/users/delete-user?userId=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"users",
+								"delete-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "d01aa0f2-d77e-4b00-9dd1-537d5a2e28d1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/user/roles?userId=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"user",
-						"roles"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
+			"id": "8dc2ff8d-26ed-4b7e-8a35-bb44384c7c3c"
 		},
 		{
-			"name": "updateJob",
-			"id": "88957e62-468a-41f7-900f-8eeb74e23944",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"Make 10 Krabby Patties\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"Status\": \"Not Done\",\r\n    \"DueDate\": \"2025-08-05T12:12:34Z\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5272/jobs/update-job?jobId=8",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs",
-						"update-job"
-					],
-					"query": [
-						{
-							"key": "jobId",
-							"value": "8"
-						}
-					]
+			"name": "Crew",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "2c632980-72d8-46f7-ab32-159c645c9a61",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"id": "a785b5fd-f21d-46ec-a478-01fccd5ef54b"
 		},
 		{
-			"name": "updateUser",
-			"id": "93d1aed2-5ed5-41d0-8bc1-d2206eedfe45",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Spongebob Squarepants\",\r\n    \"password\": \"gary123\",\r\n    \"email\": \"spongebob@krustykrab.net\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5272/users/update-user?userId=9",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"users",
-						"update-user"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "9"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "clearJob",
-			"id": "5fceab96-5b18-4e37-a8f9-8583630243b7",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/jobs/clear-job?jobId=7",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs",
-						"clear-job"
-					],
-					"query": [
-						{
-							"key": "jobId",
-							"value": "7"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "deleteJob",
-			"id": "0c7798a8-152c-4bbb-91e7-20be4656222a",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/jobs/delete-job?userId=7",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"jobs",
-						"delete-job"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "7"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "deleteUser",
-			"id": "2f662788-da5a-41aa-b55c-1765d1cc25d1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5272/users/delete-user?userId=9",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5272",
-					"path": [
-						"users",
-						"delete-user"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "9"
-						}
-					]
-				}
-			},
-			"response": []
+			"name": "CrewMember",
+			"item": [],
+			"id": "fa17a0ba-0414-41a3-8aba-6555a148f185"
 		}
 	]
 }
