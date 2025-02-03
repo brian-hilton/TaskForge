@@ -142,7 +142,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5272/jobs?jobId=3&userId=6",
+					"raw": "http://localhost:5272/jobs?jobId=8&userId=9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,11 +154,11 @@
 					"query": [
 						{
 							"key": "jobId",
-							"value": "3"
+							"value": "8"
 						},
 						{
 							"key": "userId",
-							"value": "6"
+							"value": "9"
 						}
 					]
 				}
@@ -175,7 +175,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5272/jobs?jobId=7",
+					"raw": "http://localhost:5272/jobs?jobId=8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -187,7 +187,7 @@
 					"query": [
 						{
 							"key": "jobId",
-							"value": "7"
+							"value": "8"
 						}
 					]
 				}
@@ -213,7 +213,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/get-user?userId=2",
+					"raw": "http://localhost:5272/get-user?userId=9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -225,7 +225,7 @@
 					"query": [
 						{
 							"key": "userId",
-							"value": "2"
+							"value": "9"
 						}
 					]
 				}
@@ -344,7 +344,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Name\": \"Tape and float\",\r\n    \"Location\": \"123 Georgetown\",\r\n    \"Status\": \"halfway\",\r\n    \"DueDate\": \"2025-05-05T12:12:34Z\"\r\n}",
+					"raw": "{\r\n    \"Name\": \"Make 10 Krabby Patties\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"Status\": \"Not Done\",\r\n    \"DueDate\": \"2025-08-05T12:12:34Z\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -352,7 +352,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/jobs/update-job?jobId=3",
+					"raw": "http://localhost:5272/jobs/update-job?jobId=8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -365,7 +365,7 @@
 					"query": [
 						{
 							"key": "jobId",
-							"value": "3"
+							"value": "8"
 						}
 					]
 				}
@@ -383,7 +383,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Guy\",\r\n    \"password\": \"Dude\",\r\n    \"email\": \"guydude@website.com\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Spongebob Squarepants\",\r\n    \"password\": \"gary123\",\r\n    \"email\": \"spongebob@krustykrab.net\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -391,7 +391,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5272/users/update-user?userId=1",
+					"raw": "http://localhost:5272/users/update-user?userId=9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -404,7 +404,7 @@
 					"query": [
 						{
 							"key": "userId",
-							"value": "1"
+							"value": "9"
 						}
 					]
 				}
