@@ -828,6 +828,19 @@
 				}
 			],
 			"id": "fa17a0ba-0414-41a3-8aba-6555a148f185"
+		},
+		{
+			"name": "openApi",
+			"id": "d7b437d2-9633-47d5-88d7-48cc6932b4dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5272/openapi/v1.json"
+			},
+			"response": []
 		}
 	]
 }
