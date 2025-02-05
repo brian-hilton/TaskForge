@@ -134,7 +134,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs?jobId=8",
+							"raw": "http://localhost:5272/jobs?jobId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -146,7 +146,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "8"
+									"value": "1"
 								}
 							]
 						}
@@ -163,7 +163,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/user/jobs?userId=1",
+							"raw": "http://localhost:5272/user/jobs?userId=8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -176,7 +176,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "8"
 								}
 							]
 						}
@@ -289,7 +289,7 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "addRole",
+					"name": "postRole",
 					"id": "c65e9dee-c631-4fca-ac63-c4d524228fd5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -526,7 +526,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/get-crew?crewId=3",
+							"raw": "http://localhost:5272/crews/get-crew?crewId=4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -539,7 +539,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "3"
+									"value": "4"
 								}
 							]
 						}
@@ -725,7 +725,7 @@
 					"response": []
 				},
 				{
-					"name": "postMember",
+					"name": "postCrewMember",
 					"id": "a82934b6-d5ec-48a9-b085-7508f508fd42",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
