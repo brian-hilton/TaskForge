@@ -68,3 +68,6 @@ C:\Users\brian\source\repos\TaskForge\TaskForge\obj\Debug\net9.0\TaskForge.pdb
 C:\Users\brian\source\repos\TaskForge\TaskForge\obj\Debug\net9.0\TaskForge.genruntimeconfig.cache
 C:\Users\brian\source\repos\TaskForge\TaskForge\obj\Debug\net9.0\ref\TaskForge.dll
 C:\Users\brian\source\repos\TaskForge\TaskForge\obj\Debug\net9.0\TaskForge.sourcelink.json
+C:\Users\brian\source\repos\TaskForge\TaskForge\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\brian\source\repos\TaskForge\TaskForge\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\brian\source\repos\TaskForge\TaskForge\obj\Debug\net9.0\TaskForge.MvcApplicationPartsAssemblyInfo.cs

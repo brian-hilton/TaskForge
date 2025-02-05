@@ -37,10 +37,10 @@ namespace TaskForge.Repositories
         }
 
         // Return list of all crew_id's a user is part of
-        public List<String>? GetAllCrewsByUser(int userId)
+        public List<string>? GetAllCrewsByUser(int userId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            var crewIdList = db.Query<String>(@"select crew_id from dbo.CrewMembers where user_id = @UserId", new { UserId = userId });
+            var crewIdList = db.Query<string>(@"select crew_id from dbo.CrewMembers where user_id = @UserId", new { UserId = userId });
 
             if (crewIdList == null || crewIdList?.Count() < 1)
             {

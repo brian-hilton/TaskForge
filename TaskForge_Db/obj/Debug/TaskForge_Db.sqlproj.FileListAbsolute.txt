@@ -4,3 +4,7 @@ C:\Users\brian\source\repos\TaskForge\TaskForge_Db\bin\Debug\TaskForge_Db.pdb
 C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.sqlproj.AssemblyReference.cache
 C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.dll
 C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\TaskForge_Db.pdb
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\Model.xml
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\refactor.xml
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\postdeploy.sql
+C:\Users\brian\source\repos\TaskForge\TaskForge_Db\obj\Debug\predeploy.sql

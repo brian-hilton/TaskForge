@@ -9,10 +9,14 @@ namespace TaskForge
     {
         public static void Main(string[] args)
         {
-            
+            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddOpenApi();
             string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
-            var app = builder.Build();            
+            var app = builder.Build(); 
+            
+            app.MapOpenApi();
 
             app.MapUserEndpoints();
             app.MapJobEndpoints();
