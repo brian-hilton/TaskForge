@@ -7,8 +7,7 @@ namespace TaskForge.UI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddRazorPages();
-
+            builder.Services.AddRazorPages()
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -18,7 +17,7 @@ namespace TaskForge.UI
             }
 
             app.UseRouting();
-
+            app.UseCors("AllowFrontend");
             app.UseAuthorization();
 
             app.MapStaticAssets();

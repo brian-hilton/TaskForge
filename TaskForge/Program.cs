@@ -13,11 +13,21 @@ namespace TaskForge
 
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddOpenApi();
-            string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
-            var app = builder.Build(); 
-            
-            app.MapOpenApi();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy => policy.WithOrigins("http://localhost:5173")
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    .AllowCredentials());
+            });
+
+            string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
+            var app = builder.Build();
+
+            app.UseCors("AllowFrontend");
+            app.MapOpenApi();
             app.MapUserEndpoints();
             app.MapJobEndpoints();
             app.MapCrewEndpoints();
