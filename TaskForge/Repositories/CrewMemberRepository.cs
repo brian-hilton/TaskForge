@@ -15,6 +15,19 @@ namespace TaskForge.Repositories
             _databaseConnection = databaseConnection;
         }
 
+        public CrewMember GetCrewMemberByUserId(int userId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            var crewMember = db.QueryFirstOrDefault<CrewMember>(@"select * from dbo.CrewMembers
+                                                 where user_id = @UserId", new { UserId = userId });
+
+            if (crewMember == null)
+            {
+                throw new Exception("Could not get crew member");
+            }
+
+            return crewMember;
+        }
         public CrewMember CreateCrewMember(int crewId, int userId, string role)
         {
             using var db = new SqlConnection(_databaseConnection);
