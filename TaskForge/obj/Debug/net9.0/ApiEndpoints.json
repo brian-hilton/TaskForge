@@ -43,7 +43,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__2",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__3",
     "RelativePath": "crews/add-member",
     "HttpMethod": "POST",
     "IsController": false,
@@ -119,7 +119,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__5",
     "RelativePath": "crews/delete-all-user-memberships",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -163,7 +163,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__3",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
     "RelativePath": "crews/delete-member",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -190,7 +190,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__1",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__2",
     "RelativePath": "crews/get-all-crews-for-user",
     "HttpMethod": "GET",
     "IsController": false,
@@ -253,6 +253,30 @@
     "ReturnTypes": [
       {
         "Type": "TaskForge.Models.Crew",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__1",
+    "RelativePath": "crews/get-member",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.CrewMember",
         "MediaTypes": [
           "application/json"
         ],
