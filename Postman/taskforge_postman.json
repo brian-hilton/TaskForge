@@ -825,6 +825,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getCrewMemberByUserId",
+					"id": "c914b177-8045-4e91-a58c-3b980679243d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/get-member?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"get-member"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "fa17a0ba-0414-41a3-8aba-6555a148f185"
