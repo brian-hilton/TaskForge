@@ -665,7 +665,7 @@
 			"name": "CrewMember",
 			"item": [
 				{
-					"name": "getAllCrewMembers",
+					"name": "getAllCrewMembersByCrewId",
 					"id": "2f9bc5ec-7213-4729-a333-b8b393171a46",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -866,7 +866,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=1&roleId=1",
+							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=2&roleId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -879,11 +879,11 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "2"
 								},
 								{
 									"key": "roleId",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						}
