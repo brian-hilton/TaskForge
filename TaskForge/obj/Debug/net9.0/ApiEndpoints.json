@@ -119,7 +119,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__5",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__6",
     "RelativePath": "crews/delete-all-user-memberships",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -163,7 +163,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__5",
     "RelativePath": "crews/delete-member",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -306,6 +306,35 @@
     "ReturnTypes": [
       {
         "Type": "TaskForge.Models.Crew",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "RelativePath": "crews/update-crew-member-role",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.CrewMember",
         "MediaTypes": [
           "application/json"
         ],

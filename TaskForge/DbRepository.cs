@@ -50,8 +50,12 @@ namespace TaskForge
             using var db = new SqlConnection(_databaseConnection);
             var role = db.QueryFirstOrDefault<Role>("select * from dbo.Roles where id = @RoleId", new { RoleId = roleId });
 
-            return role;
+            if (role == null)
+            {
+                throw new Exception("could not find role.");
+            }
 
+            return role;
         }
 
     }

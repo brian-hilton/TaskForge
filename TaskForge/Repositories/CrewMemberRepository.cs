@@ -41,12 +41,15 @@ namespace TaskForge.Repositories
         public CrewMember UpdateCrewMemberRole(int userId, int roleId)
         {
             var role = GetRoleById(roleId) ?? throw new Exception("Invalid role");
-            using var db = new SqlConnection( _databaseConnection);
+            var roleName = role.Name;
+
+            using var db = new SqlConnection(_databaseConnection);
+            db.Open();
             var transaction = db.BeginTransaction();
 
             int rowsAffected = db.Execute(@"update CrewMembers 
-                                            set role_id = @RoleId
-                                            where user_id = @UserId", new { RoleId = roleId, UserId = userId }, transaction);
+                                            set role = @RoleName
+                                            where user_id = @UserId", new { RoleName = roleName, UserId = userId }, transaction);
 
             if (rowsAffected != 1)
             {
