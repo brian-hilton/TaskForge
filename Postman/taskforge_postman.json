@@ -802,7 +802,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=2&roleId=1",
+							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=2&roleId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -819,7 +819,7 @@
 								},
 								{
 									"key": "roleId",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						}
