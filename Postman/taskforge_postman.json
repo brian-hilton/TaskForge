@@ -793,6 +793,40 @@
 					"response": []
 				},
 				{
+					"name": "updateCrewMemberRole",
+					"id": "3790bf07-7875-4f02-8b4e-5b7173acadb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=2&roleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"update-crew-member-role"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "roleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "deleteMember",
 					"id": "db919d8c-fe4e-4017-921f-f3af098d4786",
 					"protocolProfileBehavior": {
@@ -849,40 +883,6 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateCrewMemberRole",
-					"id": "3790bf07-7875-4f02-8b4e-5b7173acadb9",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5272/crews/update-crew-member-role?userId=2&roleId=3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5272",
-							"path": [
-								"crews",
-								"update-crew-member-role"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "2"
-								},
-								{
-									"key": "roleId",
 									"value": "3"
 								}
 							]
