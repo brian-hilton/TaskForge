@@ -38,6 +38,27 @@ namespace TaskForge.Repositories
             return new CrewMember { CrewId = crewId, UserId = userId, Role = role };
         }
 
+        public CrewMember UpdateCrewMemberRole(int userId, int roleId)
+        {
+            var role = GetRoleById(roleId) ?? throw new Exception("Invalid role");
+            using var db = new SqlConnection( _databaseConnection);
+            var transaction = db.BeginTransaction();
+
+            int rowsAffected = db.Execute(@"update CrewMembers 
+                                            set role_id = @RoleId
+                                            where user_id = @UserId", new { RoleId = roleId, UserId = userId }, transaction);
+
+            if (rowsAffected != 1)
+            {
+                transaction.Rollback();
+                throw new Exception("Error updating role.");
+            }
+
+            transaction.Commit();
+            return GetCrewMemberByUserId(userId);
+
+        }
+
         // Get all crew members for a crew
         public List<CrewMember>? GetAllCrewMembersByCrew(int crewId)
         {

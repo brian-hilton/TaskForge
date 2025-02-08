@@ -40,6 +40,13 @@ namespace TaskForge.Endpoints
                 return newCrewMember;
             });
 
+            app.MapPatch("crews/update-crew-member-role", (int userId, int roleId) => 
+            {
+                var repo = new CrewMemberRepository(dbConnection);
+                var updatedCrewMember = repo.UpdateCrewMemberRole(userId, roleId);
+                return updatedCrewMember;
+            });
+
             // Remove user from crew
             app.MapDelete("crews/delete-member", (int crewId, int userId) =>
             {

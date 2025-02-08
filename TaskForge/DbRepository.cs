@@ -42,6 +42,15 @@ namespace TaskForge
             }
 
             transaction.Commit();
+        }
+
+        public Role? GetRoleById(int roleId)
+        {
+            // Return a Role object by the id of the role we want in the Roles table
+            using var db = new SqlConnection(_databaseConnection);
+            var role = db.QueryFirstOrDefault<Role>("select * from dbo.Roles where id = @RoleId", new { RoleId = roleId });
+
+            return role;
 
         }
 
