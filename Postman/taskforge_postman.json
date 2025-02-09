@@ -134,7 +134,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs?jobId=w",
+							"raw": "http://localhost:5272/jobs?jobId=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -146,7 +146,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "w"
+									"value": "2"
 								}
 							]
 						}
