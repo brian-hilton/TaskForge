@@ -526,7 +526,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/get-crew?crewId=5",
+							"raw": "http://localhost:5272/crews/get-crew?crewId=4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -539,7 +539,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "5"
+									"value": "4"
 								}
 							]
 						}
@@ -569,7 +569,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Dudes",
+							"raw": "http://localhost:5272/crews/create-crew?name=Painters",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +582,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Dudes"
+									"value": "Painters"
 								}
 							]
 						}
