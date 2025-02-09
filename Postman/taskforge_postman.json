@@ -569,7 +569,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Painters",
+							"raw": "http://localhost:5272/crews/create-crew?name=Flooring",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +582,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Painters"
+									"value": "Flooring"
 								}
 							]
 						}
