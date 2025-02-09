@@ -134,7 +134,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs?jobId=1",
+							"raw": "http://localhost:5272/jobs?jobId=w",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -146,7 +146,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "1"
+									"value": "w"
 								}
 							]
 						}
@@ -569,7 +569,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Justice League",
+							"raw": "http://localhost:5272/crews/create-crew?name=Dudes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +582,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Justice League"
+									"value": "Dudes"
 								}
 							]
 						}
