@@ -569,7 +569,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Dogs",
+							"raw": "http://localhost:5272/crews/create-crew?name=Justice League",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +582,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Dogs"
+									"value": "Justice League"
 								}
 							]
 						}
