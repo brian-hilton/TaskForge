@@ -9,6 +9,7 @@ namespace TaskForge
     {
         public static void Main(string[] args)
         {
+
             Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
             var builder = WebApplication.CreateBuilder(args);
