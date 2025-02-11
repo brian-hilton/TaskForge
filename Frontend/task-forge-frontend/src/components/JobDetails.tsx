@@ -31,35 +31,30 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
   if (!job) return <p>No job found.</p>;
 
   return (
-    <div>
-      <h2>Job Details</h2>
-      <p>
-        <strong>ID:</strong> {job.id}
-      </p>
-      <p>
-        <strong>Name:</strong> {job.name}
-      </p>
-      <p>
-        <strong>Status:</strong> {job.status}
-      </p>
-      <p>
-        <strong>Location:</strong> {job.location}
-      </p>
-      <p>
-        <strong>User ID:</strong> {job.userId ?? "N/A"}
-      </p>
-      <p>
-        <strong>Created:</strong>{" "}
-        {new Date(job.createdDate).toLocaleDateString()}
-      </p>
-      <p>
-        <strong>Updated:</strong>{" "}
-        {new Date(job.updatedDate).toLocaleDateString()}
-      </p>
-      <p>
-        <strong>Due Date:</strong>{" "}
-        {job.dueDate ? new Date(job.dueDate).toLocaleDateString() : "N/A"}
-      </p>
+    <div className="bg-purple-700 text-white p-6 rounded-2xl shadow-lg w-full max-w-md">
+      <h2 className="text-2xl font-bold mb-2">{job.name}</h2>
+      <p className="text-sm text-purple-300 mb-4">{job.location}</p>
+
+      <div className="grid grid-cols-2 gap-2 text-sm">
+        <p>
+          <span className="font-semibold">Status:</span> {job.status}
+        </p>
+        <p>
+          <span className="font-semibold">User:</span> {job.userId ?? "N/A"}
+        </p>
+        <p>
+          <span className="font-semibold">Created:</span>{" "}
+          {new Date(job.createdDate).toLocaleDateString()}
+        </p>
+        <p>
+          <span className="font-semibold">Updated:</span>{" "}
+          {new Date(job.updatedDate).toLocaleDateString()}
+        </p>
+        <p>
+          <span className="font-semibold">Due:</span>{" "}
+          {job.dueDate ? new Date(job.dueDate).toLocaleDateString() : "N/A"}
+        </p>
+      </div>
     </div>
   );
 };

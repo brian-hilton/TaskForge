@@ -15,3 +15,4 @@ export const getJob = async (jobId: number): Promise<Job> => {
     const response = await apiClient.get(`jobs?jobId=${jobId}`);
     return response.data;
 };
+

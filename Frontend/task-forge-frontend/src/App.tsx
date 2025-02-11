@@ -10,7 +10,6 @@ function App() {
         <h1>Job Viewer</h1>
         <JobDetails jobId={1} />
         <JobDetails jobId={2} />
-        <JobDetails jobId={9} />
       </div>
     </>
   );
