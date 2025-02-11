@@ -19,7 +19,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__5",
+    "Method": "\u003CMapUserEndpoints\u003Eb__6",
     "RelativePath": "create-user",
     "HttpMethod": "POST",
     "IsController": false,
@@ -545,6 +545,30 @@
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapUserEndpoints\u003Eb__4",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "TaskForge.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TaskForge.Models.User",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapUserEndpoints\u003Eb__5",
     "RelativePath": "user/add-role",
     "HttpMethod": "POST",
     "IsController": false,
@@ -645,7 +669,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__7",
+    "Method": "\u003CMapUserEndpoints\u003Eb__8",
     "RelativePath": "users/delete-user",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -667,7 +691,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__6",
+    "Method": "\u003CMapUserEndpoints\u003Eb__7",
     "RelativePath": "users/update-user",
     "HttpMethod": "PATCH",
     "IsController": false,

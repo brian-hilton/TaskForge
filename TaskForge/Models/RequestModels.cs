@@ -47,4 +47,11 @@ namespace TaskForge.Models
         public string? Name { get; set; }
         public int? SupervisorId { get; set; } = 0;
     }
+
+    public class LoginRequest
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+       
 }

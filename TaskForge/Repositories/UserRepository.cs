@@ -19,6 +19,20 @@ namespace TaskForge.Repositories
         {
             _databaseConnection = databaseConnection;
         }
+
+        public User Login(LoginRequest loginRequest)
+        {
+            if (loginRequest == null) { throw new Exception("Email and password required."); }
+            using var db = new SqlConnection(_databaseConnection);
+
+            var user = db.QueryFirstOrDefault<User>(@"select * from dbo.users where email = @Email and password = @Password", new { Email = loginRequest.Email, Password = loginRequest.Password });
+
+            if (user == null) { throw new Exception("Invalid email or password."); }
+
+            return user;
+            
+
+        }
         public User CreateUser(string username, string password, string email)
         {
             using var db = new SqlConnection(_databaseConnection);

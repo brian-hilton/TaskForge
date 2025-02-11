@@ -14,7 +14,16 @@ namespace TaskForge
 
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddOpenApi();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); 
+                options.Cookie.HttpOnly = true; 
+                options.Cookie.IsEssential = true; 
+            });
 
+            builder.Services.AddAuthentication().AddCookie();
+            builder.Services.AddAuthorization(); 
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowFrontend",
@@ -28,6 +37,8 @@ namespace TaskForge
             var app = builder.Build();
 
             app.UseCors("AllowFrontend");
+            app.UseSession();
+            app.UseAuthorization();
             app.MapOpenApi();
             app.MapUserEndpoints();
             app.MapJobEndpoints();

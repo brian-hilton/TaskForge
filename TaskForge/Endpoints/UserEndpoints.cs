@@ -41,6 +41,13 @@ namespace TaskForge.Endpoints
                 return userRoles;
             });
 
+            app.MapPost("/login", (LoginRequest loginRequest) =>
+            {
+                var repo = new UserRepository(dbConnection);
+                var user = repo.Login(loginRequest);
+                return user;
+            });
+
             // Add a role into role table; return role object
             app.MapPost("/user/add-role", (CreateRoleRequest roleRequest) =>
             {
