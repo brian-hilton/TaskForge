@@ -31,7 +31,7 @@
 					"response": []
 				},
 				{
-					"name": "assignJob",
+					"name": "postJobById",
 					"id": "28c93f90-cff4-4e13-ba82-af1875dddbe8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -41,14 +41,35 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"JobId\": 1009,\r\n    \"UserId\": 9     \r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:5272/jobs/assign"
+						"url": {
+							"raw": "http://localhost:5272/jobs/assign?jobId=1009&userId=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"jobs",
+								"assign"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "1009"
+								},
+								{
+									"key": "userId",
+									"value": "9"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -135,7 +156,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs?jobId=2",
+							"raw": "http://localhost:5272/jobs?jobId=1009",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -147,7 +168,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "2"
+									"value": "1009"
 								}
 							]
 						}
