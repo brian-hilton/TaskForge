@@ -163,7 +163,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/user/jobs?userId=8",
+							"raw": "http://localhost:5272/user/jobs?userId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -176,7 +176,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "8"
+									"value": "1"
 								}
 							]
 						}
