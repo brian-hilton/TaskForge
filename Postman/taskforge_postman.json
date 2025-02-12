@@ -321,7 +321,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Username\": \"Spongebob\",\r\n    \"Password\": \"gary123\",\r\n    \"Email\": \"spongebob@krustykrab.com\"\r\n}",
+							"raw": "{\r\n    \"Username\": \"plankton\",\r\n    \"Password\": \"plankton123\",\r\n    \"Email\": \"planklton@krustykrab.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -490,7 +490,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/users/delete-user?userId=9",
+							"raw": "http://localhost:5272/users/delete-user?userId=1012",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -503,7 +503,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "9"
+									"value": "1012"
 								}
 							]
 						}
