@@ -553,7 +553,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=Texas Road House",
+							"raw": "http://localhost:5272/crews/create-crew?name=The Boys",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -566,7 +566,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Texas Road House"
+									"value": "The Boys"
 								}
 							]
 						}
@@ -592,7 +592,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/crews/update-crew?crewId=4",
+							"raw": "http://localhost:5272/crews/update-crew?crewId=1002",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -605,7 +605,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "4"
+									"value": "1002"
 								}
 							]
 						}
@@ -622,7 +622,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/delete-crew?crewId=4",
+							"raw": "http://localhost:5272/crews/delete-crew?crewId=1002",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -635,7 +635,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "4"
+									"value": "1002"
 								}
 							]
 						}
