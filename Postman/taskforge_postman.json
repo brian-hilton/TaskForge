@@ -351,7 +351,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/get-user?userId=9",
+							"raw": "http://localhost:5272/get-user?userId=1009",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -363,7 +363,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "9"
+									"value": "1009"
 								}
 							]
 						}
@@ -421,7 +421,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/user/roles?userId=1",
+							"raw": "http://localhost:5272/user/roles?userId=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -434,7 +434,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
