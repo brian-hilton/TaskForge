@@ -224,7 +224,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs/delete-job?userId=7",
+							"raw": "http://localhost:5272/jobs/delete-job?jobId=7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -236,7 +236,7 @@
 							],
 							"query": [
 								{
-									"key": "userId",
+									"key": "jobId",
 									"value": "7"
 								}
 							]
