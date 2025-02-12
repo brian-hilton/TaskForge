@@ -14,27 +14,29 @@ namespace TaskForge.Endpoints
             // Return user from user table based off passed id in the url
             app.MapGet("/get-user", async (int userId) =>
             {
-                try
-                {
-                    var repo = new UserRepository(dbConnection);
-                    var user = await repo.GetUserAsync(userId);
+                var repo = new UserRepository(dbConnection);
+                var user = await repo.GetUserAsync(userId);
 
-                    if (user == null) { return Results.NotFound($"User with ID: {userId} not found."); }
-
-                    return Results.Ok(user);
-                }
-                catch (Exception ex)
+                if (user == null)
                 {
-                    Console.WriteLine($"Error fetching user {userId}: {ex.Message}");
-                    return Results.Problem("An error occured while retrieving the user.");
+                    return Results.NotFound($"User with ID: {userId} not found.");
                 }
+
+                return Results.Ok(user);
             });
 
+            // Get top users
             app.MapGet("/get-top-users", (int top) =>
             {
                 var repo = new UserRepository(dbConnection);
                 var users = repo.GetTopUsers(top);
-                return users;
+
+                if (users == null || !users.Any())
+                {
+                    return Results.NotFound("No users found.");
+                }
+
+                return Results.Ok(users);
             });
 
             // This one set to root for testing purposes
@@ -42,34 +44,33 @@ namespace TaskForge.Endpoints
             {
                 var repo = new UserRepository(dbConnection);
                 var users = repo.GetTopUsers(20);
-                return users;
+                return users.Any() ? Results.Ok(users) : Results.NotFound("No users found.");
             });
 
             // Get all roles associated with user
             app.MapGet("/user/roles", async (int userId) =>
             {
-                try
-                {
-                    var repo = new UserRepository(dbConnection);
-                    var roles = await repo.GetUserRolesAsync(userId);
+                var repo = new UserRepository(dbConnection);
+                var roles = await repo.GetUserRolesAsync(userId);
 
-                    if (roles.Count == 0)
-                        return Results.NotFound($"No roles found for user with ID {userId}");
+                if (roles.Count == 0)
+                    return Results.NotFound($"No roles found for user with ID {userId}");
 
-                    return Results.Ok(roles);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error fetching user roles: {ex.Message}");
-                    return Results.Problem("An error occurred while retrieving user roles.");
-                }
+                return Results.Ok(roles);
             });
 
+            // Login endpoint
             app.MapPost("/login", async (LoginRequest loginRequest) =>
             {
                 var repo = new UserRepository(dbConnection);
                 var user = await repo.LoginAsync(loginRequest);
-                return user;
+
+                if (user == null)
+                {
+                    return Results.NotFound("Invalid login credentials.");
+                }
+
+                return Results.Ok(user);
             });
 
             // Add a role into role table; return role object
@@ -77,14 +78,26 @@ namespace TaskForge.Endpoints
             {
                 var repo = new UserRepository(dbConnection);
                 var newRole = await repo.CreateUserRoleAsync(roleRequest.UserId, roleRequest.RoleId);
-                return newRole;
+
+                if (newRole == null)
+                {
+                    return Results.BadRequest("Failed to create role.");
+                }
+
+                return Results.Created($"/user/roles/{newRole.Id}", newRole);
             });
 
             // Create a user using request model; return user object
             app.MapPost("/create-user", async (CreateUserRequest createUserRequest) =>
-            {                
+            {
                 var repo = new UserRepository(dbConnection);
                 var newUser = await repo.CreateUserAsync(createUserRequest.Username, createUserRequest.Password, createUserRequest.Email);
+
+                if (newUser == null)
+                {
+                    return Results.BadRequest("Failed to create user.");
+                }
+
                 return Results.Created($"/get-user?userId={newUser.Id}", newUser);
             });
 
@@ -95,8 +108,9 @@ namespace TaskForge.Endpoints
 
                 if (updatedUser == null)
                 {
-                    return Results.NotFound(new { message = $"User with ID {userId} not found."});
+                    return Results.NotFound(new { message = $"User with ID {userId} not found." });
                 }
+
                 return Results.Ok(updatedUser);
             });
 
@@ -113,8 +127,6 @@ namespace TaskForge.Endpoints
 
                 return Results.NoContent(); // 204 No Content for successful deletion
             });
-
-
         }
     }
 }
