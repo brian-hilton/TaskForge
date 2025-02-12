@@ -101,14 +101,15 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/jobs?jobId=8&userId=9",
+							"raw": "http://localhost:5272/jobs/assign?jobId=8&userId=9",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5272",
 							"path": [
-								"jobs"
+								"jobs",
+								"assign"
 							],
 							"query": [
 								{
