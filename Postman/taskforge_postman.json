@@ -41,35 +41,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \"Name\": \"Sell Kelp Shakes\",\r\n    \"Status\": \"Almost Done\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"user_id\": 9\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:5272/jobs/assign?jobId=1009&userId=9",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5272",
-							"path": [
-								"jobs",
-								"assign"
-							],
-							"query": [
-								{
-									"key": "jobId",
-									"value": "1009"
-								},
-								{
-									"key": "userId",
-									"value": "9"
-								}
-							]
-						}
+						"url": "http://localhost:5272/user/create-job"
 					},
 					"response": []
 				},
