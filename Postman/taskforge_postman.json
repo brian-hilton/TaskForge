@@ -31,7 +31,7 @@
 					"response": []
 				},
 				{
-					"name": "postJobById",
+					"name": "postJobByUser",
 					"id": "28c93f90-cff4-4e13-ba82-af1875dddbe8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
