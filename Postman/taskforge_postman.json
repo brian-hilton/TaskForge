@@ -41,7 +41,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"UserId\": 9,\r\n    \"JobId\": 1009 \r\n}",
+							"raw": "{\r\n    \"JobId\": 1009,\r\n    \"UserId\": 9     \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
