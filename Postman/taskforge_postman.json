@@ -41,7 +41,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Sell Kelp Shakes\",\r\n    \"Status\": \"Almost Done\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"user_id\": 900\r\n}",
+							"raw": "{\r\n    \"Name\": \"Sell Kelp Shakes\",\r\n    \"Status\": \"Almost Done\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"user_id\": 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
