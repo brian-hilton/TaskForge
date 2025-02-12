@@ -38,22 +38,22 @@ namespace TaskForge.Repositories
             return new CrewMember { CrewId = crewId, UserId = userId, Role = role };
         }
 
-        public CrewMember UpdateCrewMemberRole(int userId, int roleId)
+        public async Task<CrewMember> UpdateCrewMemberRole(int userId, int roleId)
         {
-            var role = GetRoleById(roleId) ?? throw new Exception("Invalid role");
+            var role = await GetRoleByIdAsync(roleId);
             var roleName = role.Name;
 
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
-            int rowsAffected = db.Execute(@"update CrewMembers 
+            int rowsAffected = await db.ExecuteAsync(@"update CrewMembers 
                                             set role = @RoleName
                                             where user_id = @UserId", new { RoleName = roleName, UserId = userId }, transaction);
 
             if (rowsAffected != 1)
             {
-                transaction.Rollback();
+                await transaction.RollbackAsync();
                 throw new Exception("Error updating role.");
             }
 

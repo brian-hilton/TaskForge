@@ -51,10 +51,10 @@ namespace TaskForge.Endpoints
                 return ($"Assigned job {jobId} to user {userId}");
             });
 
-            app.MapPatch("/jobs/update-job", (UpdateJobRequest jobRequest, int jobId) =>
+            app.MapPatch("/jobs/update-job", async (UpdateJobRequest jobRequest, int jobId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var updatedJob = repo.UpdateJob(jobRequest, jobId);
+                var updatedJob = await repo.UpdateJobAsync(jobRequest, jobId);
                 return updatedJob;
 
             });

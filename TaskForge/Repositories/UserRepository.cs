@@ -20,25 +20,22 @@ namespace TaskForge.Repositories
             _databaseConnection = databaseConnection;
         }
 
-        public User Login(LoginRequest loginRequest)
+        public async Task<User> LoginAsync(LoginRequest loginRequest)
         {
-            if (loginRequest == null) { throw new Exception("Email and password required."); }
             using var db = new SqlConnection(_databaseConnection);
-
-            var user = db.QueryFirstOrDefault<User>(@"select * from dbo.users where email = @Email and password = @Password", new { Email = loginRequest.Email, Password = loginRequest.Password });
-
-            if (user == null) { throw new Exception("Invalid email or password."); }
-
-            return user;
-            
-
+            return await db.QueryFirstOrDefaultAsync<User>(@"
+                                                            select * from dbo.users 
+                                                            where email = @Email and password = @Password", 
+                                                            new { Email = loginRequest.Email, Password = loginRequest.Password }).ConfigureAwait(false);
         }
-        public User CreateUser(string username, string password, string email)
+        public async Task<User> CreateUserAsync(string username, string password, string email)
         {
             using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync().ConfigureAwait(false);
+
             var currentDate = DateTime.UtcNow;
 
-            var newId = db.ExecuteScalar<int>(@"
+            var newId = await db.ExecuteScalarAsync<int>(@"
             insert into dbo.Users (name, password, created_date, updated_date, email)
             output inserted.id
             values (@Name, @Password, @createdDate, @createdDate, @Email)",
@@ -47,22 +44,17 @@ namespace TaskForge.Repositories
             return new User { Id = newId, Name = username, Password = password, CreatedDate = currentDate, UpdatedDate = currentDate, Email = email };
         }
 
-        public User? GetUser(int id)
+        public async Task<User?> GetUserAsync(int id)
         {
             using var db = new SqlConnection(_databaseConnection);
-
-            var user = db.QueryFirstOrDefault<User>("select * from users where id = @Id", new { Id = id });
-
-            return user;
+            return await db.QueryFirstOrDefaultAsync<User>("select * from users where id = @Id", new { Id = id });
         }
 
-        public List<User>? GetUsers(int pageSize, int pageNum)
+        public async Task<List<User>> GetUsers(int pageSize, int pageNum)
         {
             using var db = new SqlConnection(_databaseConnection);
-
-            var users = db.Query<User>("select * from users OFFSET @skipCount FETCH @PageSize ROWS ONLY", new { skipCount = pageNum * pageSize, PageSize = pageSize }).ToList();
-
-            return users;
+            var users = await db.QueryAsync<User>("select * from users OFFSET @skipCount FETCH @PageSize ROWS ONLY", new { skipCount = pageNum * pageSize, PageSize = pageSize });     
+            return users.ToList();
         }
 
         public List<User>? GetTopUsers(int top)
@@ -73,25 +65,25 @@ namespace TaskForge.Repositories
         }
 
         // Can return a List of Roles associated with userId
-        public List<Role> GetUserRole(int id)
+        public async Task<List<Role>> GetUserRolesAsync(int id)
         {
             using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
 
-            var roles = db.Query<Role>(@"select R.* 
+            var roles = await (db.QueryAsync<Role>(@"
+                                        select R.* 
                                         from dbo.UserRoles as UR 
                                         join dbo.Roles as R on UR.role_id = R.id 
                                         where UR.[user_id] = @UserId",
-                                        new { UserId = id }).ToList();
-
-            return roles;
-
+                                        new { UserId = id }));
+            return roles.ToList();
         }
 
-        public User UpdateUser(UpdateUserRequest updatedUser, int userId)
+        public async Task<User> UpdateUserAsync(UpdateUserRequest updatedUser, int userId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
             // Begin query and initialize empty parameters object
             var query = "update Users set ";
@@ -120,86 +112,70 @@ namespace TaskForge.Repositories
                 firstField = false;
             }
 
-            // If we did not find any fields in the passed job request object
-            if (firstField)
-            {
-                throw new Exception("Update attempted with empty job request");
-            }
-
             // Append WHERE clause to query
             query += " where Id = @Id";
             parameters.Add("Id", userId);
 
-            int rowsAffected = db.Execute(query, parameters, transaction);
+            int rowsAffected = await db.ExecuteAsync(query, parameters, transaction);
 
             if (rowsAffected != 1)
             {
                 transaction.Rollback();
-                throw new Exception("Could not update job.");
+                return null;
             }
 
 
-            transaction.Commit();
+            await transaction.CommitAsync();
+            await UpdateDateModifiedAsync("Users", userId);
 
-            UpdateDateModified("Users", userId);
+            return await GetUserAsync(userId);
 
-            var user = GetUser(userId);
-
-            if (user != null) { return user; }
-
-            return null;
+            
 
         }
 
-        public void DeleteUser(int userId)
+        public async Task<bool> DeleteUserAsync(int userId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
-            int rowsAffected = db.Execute(@"
+            int rowsAffected = await db.ExecuteAsync(@"
                                             delete from dbo.Users 
                                             where id = @UserId", new { UserId = userId }, transaction);
 
             if (rowsAffected != 1)
             {
-                transaction.Rollback(); throw new Exception($"Could not delete user with id: {userId}");
+                await transaction.RollbackAsync();
+                return false;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
+            return true;
         }
 
-        public UserRole CreateUserRole(int userId, int roleId)
+        public async Task<UserRole> CreateUserRoleAsync(int userId, int roleId)
         {
             // Make sure role exists by checking Role table
             // Run query to insert Role into UserRole table
             // Call update method to modify last_updated in User table
 
-            var role = GetRoleById(roleId);
-            if (role == null)
-            {
-                throw new Exception($"Could not get user role for roleId {roleId}");
-            }
+            var role = await GetRoleByIdAsync(roleId);
 
             using var db = new SqlConnection(_databaseConnection);
 
             var currentDate = DateTime.UtcNow;
 
-            int newId = db.ExecuteScalar<int>(@"
+            int newId = await db.ExecuteScalarAsync<int>(@"
                                 insert into dbo.UserRoles (user_id, role_id)
                                 output inserted.id
                                 values (@Id, @RoleId)",
                                 new { Id = userId, RoleId = role.Id });
 
-            if (newId == 0)
-            {
-                throw new Exception("Could not assign role for user.");
-            }
-
             var userRole = new UserRole { Id = newId, UserId = userId, RoleId = role.Id };
 
             // Update User.UpdatedDate to show that we have made a change
-            UpdateDateModified("Users", userId);
+            await UpdateDateModifiedAsync("Users", userId);
 
             return userRole;
         }

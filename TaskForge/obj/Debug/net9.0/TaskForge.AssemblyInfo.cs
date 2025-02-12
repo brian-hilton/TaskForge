@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskForge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51608f75b60d7fc395afd3994f563834696aa70d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6ca5d8c7a875338a5bfa680230bdbf0288eda08")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskForge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskForge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

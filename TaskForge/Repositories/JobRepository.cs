@@ -113,11 +113,11 @@ namespace TaskForge.Repositories
             transaction.Commit();
             return GetJobById(jobId);
         }
-        public Job UpdateJob(UpdateJobRequest updatedJob, int jobId)
+        public async Task<Job> UpdateJobAsync(UpdateJobRequest updatedJob, int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
             // Begin query and initialize empty parameters object
             var query = "update Jobs set ";
@@ -156,25 +156,18 @@ namespace TaskForge.Repositories
             // If we did not find any fields in the passed job request object
             if (firstField)
             {
-                throw new Exception("Update attempted with empty job request");
+                //throw new Exception("Update attempted with empty job request");
             }
 
             // Append WHERE clause to query
             query += " where Id = @Id";
             parameters.Add("Id", jobId);
 
-            int rowsAffected = db.Execute(query, parameters, transaction);
+            int rowsAffected = await db.ExecuteAsync(query, parameters, transaction);
 
-            if (rowsAffected != 1)
-            {
-                transaction.Rollback();
-                throw new Exception("Could not update job.");
-            }
+            await transaction.CommitAsync();
 
-
-            transaction.Commit();
-
-           UpdateDateModified("Jobs", jobId);
+            await UpdateDateModifiedAsync("Jobs", jobId);
 
             var job = GetJobById(jobId);
 

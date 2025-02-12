@@ -85,7 +85,7 @@ namespace TaskForge.Repositories
 
             transaction.Commit();
 
-            UpdateDateModified("Crews", crewId);
+            UpdateDateModifiedAsync("Crews", crewId);
 
             var crew = GetCrew(crewId);
             return crew;

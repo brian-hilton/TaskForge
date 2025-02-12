@@ -16,46 +16,39 @@ namespace TaskForge
         }
 
 
-        public void UpdateDateModified(string tableName, int id)
+        public async Task UpdateDateModifiedAsync(string tableName, int id)
         {
             var validTableNames = new List<string> { "Users", "Jobs", "Crews" };
 
             if (!validTableNames.Contains(tableName))
             {
-                throw new ArgumentException("Invalid table name.");
+                //throw new ArgumentException("Invalid table name.");
             }
 
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
+            await db.OpenAsync();
 
             var transaction = db.BeginTransaction();
             var currentDate = DateTime.UtcNow;
 
-            int rowsAffected = db.Execute($@"
+            int rowsAffected = await db.ExecuteAsync($@"
                                             update {tableName} SET updated_date = @CurrentDate
                                             where id = @Id" ,
                                             new { CurrentDate = currentDate, Id = id },
                                             transaction);
 
             if (rowsAffected != 1) {
-                throw new Exception($"Could not update record from {tableName}");
+                //throw new Exception($"Could not update record from {tableName}");
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
         }
 
-        public Role? GetRoleById(int roleId)
+        public async Task<Role?> GetRoleByIdAsync(int roleId)
         {
             // Return a Role object by the id of the role we want in the Roles table
             using var db = new SqlConnection(_databaseConnection);
-            var role = db.QueryFirstOrDefault<Role>("select * from dbo.Roles where id = @RoleId", new { RoleId = roleId });
-
-            if (role == null)
-            {
-                throw new Exception("could not find role.");
-            }
-
-            return role;
+            return await db.QueryFirstOrDefaultAsync<Role>("select * from dbo.Roles where id = @RoleId", new { RoleId = roleId });
         }
 
     }
