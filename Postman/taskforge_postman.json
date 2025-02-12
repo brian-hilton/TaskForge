@@ -748,7 +748,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=9&role=worker",
+							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=4&role=worker",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -765,7 +765,7 @@
 								},
 								{
 									"key": "userId",
-									"value": "9"
+									"value": "4"
 								},
 								{
 									"key": "role",
