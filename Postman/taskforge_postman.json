@@ -41,7 +41,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Sell Kelp Shakes\",\r\n    \"Status\": \"Almost Done\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"user_id\": 8\r\n}",
+							"raw": "{\r\n    \"UserId\": 8,\r\n    \"Name\": \"Sell Kelp Shakes\",\r\n    \"Status\": \"Almost Done\",\r\n    \"Location\": \"Krusty Krab\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -49,45 +49,6 @@
 							}
 						},
 						"url": "http://localhost:5272/user/create-job"
-					},
-					"response": []
-				},
-				{
-					"name": "postUserJob",
-					"id": "74c4516b-825b-4269-a3f7-81a40bc7fd6d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Paint\",\r\n    \"Status\": \"\",\r\n    \"Location\": \"12-113 North Houston\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5272/user/new-job?userId=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5272",
-							"path": [
-								"user",
-								"new-job"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "1"
-								}
-							]
-						}
 					},
 					"response": []
 				},
