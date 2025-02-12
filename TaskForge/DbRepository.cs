@@ -15,6 +15,11 @@ namespace TaskForge
             _databaseConnection = databaseConnection; 
         }
 
+        public async Task<User?> GetUserAsync(int id)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            return await db.QueryFirstOrDefaultAsync<User>("select * from users where id = @Id", new { Id = id });
+        }
 
         public async Task UpdateDateModifiedAsync(string tableName, int id)
         {

@@ -17,7 +17,7 @@ namespace TaskForge
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(30); 
+                options.IdleTimeout = TimeSpan.FromMinutes(60); 
                 options.Cookie.HttpOnly = true; 
                 options.Cookie.IsEssential = true; 
             });
@@ -53,8 +53,6 @@ namespace TaskForge
             app.MapJobEndpoints();
             app.MapCrewEndpoints();
             app.MapCrewMemberEndpoints();
-
-            //app.MapGet("/", () => "Task Forge.");
 
             app.Run();
         }

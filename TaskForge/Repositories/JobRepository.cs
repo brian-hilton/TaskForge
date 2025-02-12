@@ -15,60 +15,82 @@ namespace TaskForge.Repositories
             _databaseConnection = databaseConnection;
         }
 
-        public Job CreateJob(string name, string status, string location)
+        public async Task<Job> CreateJobAsync(string name, string status, string location)
         {
             using var db = new SqlConnection(_databaseConnection);
             var currentDate = DateTime.UtcNow;
 
             var newJob = new Job() { Name = name, Status = status, Location = location, CreatedDate = currentDate, UpdatedDate = currentDate };
 
-            var newId = db.ExecuteScalar<int>(@"
+            var newId = await db.ExecuteScalarAsync<int>(@"
             insert into dbo.Jobs (name, status, location, created_date, updated_date)
             output inserted.id
             values (@Name, @Status, @Location, @CreatedDate, @CreatedDate)", newJob);
 
             newJob.Id = newId;
             return newJob;
-
         }
 
-        public void AssignJob(int jobId, int userId)
+        public async Task<Job> UserCreateJobAsync(int userId, string name, string status, string location)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            var currentDate = DateTime.UtcNow;
+
+            // Validate userId
+            var user = await db.QueryFirstOrDefaultAsync<User>("select * from users where id = @Id", new { Id = userId });
+            if (user == null)
+            {
+                return null;
+            }
+
+            var newJob = new Job() { Name = name, Status = status, Location = location, UserId = userId, CreatedDate = currentDate, UpdatedDate = currentDate };
+
+            var newId = await db.ExecuteScalarAsync<int>(@"
+            insert into dbo.Jobs (name, status, location, user_id, created_date, updated_date)
+            output inserted.id
+            values (@Name, @Status, @Location, @UserId, @CreatedDate, @CreatedDate)", newJob);
+
+            newJob.Id = newId;
+            return newJob;
+        }
+        public async Task<bool> AssignJobAsync(int jobId, int userId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
             var currentDate = DateTime.UtcNow;
 
-            int rowsAffected = db.Execute(@"
+            int rowsAffected = await db.ExecuteAsync(@"
                         update dbo.Jobs SET user_id = @UserId
                         where id = @JobId",
                         new { JobId = jobId, UserId = userId }, transaction);
 
             if (rowsAffected != 1)
             {
-                transaction.Rollback();
-                throw new Exception("Invalid job ID");
+                await transaction.RollbackAsync();
+                return false;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
+            return true;
 
         }
 
-        public List<Job> GetUserJobs(int userId)
+        public async Task<List<Job>> GetUserJobsAsync(int userId)
         {
             using var db = new SqlConnection(_databaseConnection);
 
-            var userJobs = db.Query<Job>(@" select * from dbo.Jobs where id = @UserId", new { UserId = userId }).ToList();
-
-            return userJobs;
+            var userJobs = await db.QueryAsync<Job>(@" select * from dbo.Jobs where user_id = @UserId", new { UserId = userId });
+            if (userJobs == null) { return null; }
+            return userJobs.ToList();
         }
 
-        public Job GetJobById(int jobId)
+        public async Task<Job> GetJobByIdAsync(int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
 
-            var job = db.QueryFirstOrDefault<Job>(@"
+            var job = await db.QueryFirstOrDefaultAsync<Job>(@"
                                                     SELECT 
                                                         id AS Id,
                                                         name AS Name,
@@ -80,24 +102,18 @@ namespace TaskForge.Repositories
                                                         due_date AS DueDate
                                                     FROM dbo.Jobs
                                                     WHERE id = @JobId", new { JobId = jobId });
-
-            if (job == null)
-            {
-                throw new Exception($"Job with ID {jobId} could not be found");
-            }
-
             return job;
         }
 
-        public Job ClearJob(int jobId)
+        public async Task<Job> ClearJobAsync(int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
             var currentDate = DateTime.UtcNow;
 
-            int rowsAffected = db.Execute(@"UPDATE Jobs set 
+            int rowsAffected = await db.ExecuteAsync(@"UPDATE Jobs set 
                                             name = '',
                                             status = '',
                                             location = '',
@@ -107,11 +123,12 @@ namespace TaskForge.Repositories
 
             if (rowsAffected != 1)
             {
-                transaction.Rollback(); throw new Exception("Could not clear job");
+                await transaction.RollbackAsync();
+                return null;
             }
 
             transaction.Commit();
-            return GetJobById(jobId);
+            return await GetJobByIdAsync(jobId);
         }
         public async Task<Job> UpdateJobAsync(UpdateJobRequest updatedJob, int jobId)
         {
@@ -169,27 +186,28 @@ namespace TaskForge.Repositories
 
             await UpdateDateModifiedAsync("Jobs", jobId);
 
-            var job = GetJobById(jobId);
+            var job = await GetJobByIdAsync(jobId);
 
             return job;
         }
 
-        public void DeleteJob(int jobId)
+        public async Task<bool> DeleteJobAsync(int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
-            int rowsAffected = db.Execute(@"delete from dbo.Jobs 
+            int rowsAffected = await db.ExecuteAsync(@"delete from dbo.Jobs 
                                             where id = @JobId", new { @JobId = jobId }, transaction);
 
-            if (rowsAffected != 0)
+            if (rowsAffected != 1)
             {
-                transaction.Rollback();
-                throw new Exception($"Could not delete job with id {jobId}");
+                await transaction.RollbackAsync();
+                return false;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
+            return true;
         }
     }
 }

@@ -398,10 +398,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TaskForge.Models.Job",
-        "MediaTypes": [
-          "application/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -409,7 +407,7 @@
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapJobEndpoints\u003Eb__4",
-    "RelativePath": "jobs",
+    "RelativePath": "jobs/assign",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
@@ -427,10 +425,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -451,10 +447,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TaskForge.Models.Job",
-        "MediaTypes": [
-          "application/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -475,10 +469,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TaskForge.Models.Job",
-        "MediaTypes": [
-          "application/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -526,10 +518,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TaskForge.Models.Job",
-        "MediaTypes": [
-          "application/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
@@ -580,6 +570,28 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapJobEndpoints\u003Eb__3",
+    "RelativePath": "user/create-job",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userJobRequest",
+        "Type": "TaskForge.Models.UserJobRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapJobEndpoints\u003Eb__0",
     "RelativePath": "user/jobs",
     "HttpMethod": "GET",
@@ -594,39 +606,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[TaskForge.Models.Job, TaskForge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__3",
-    "RelativePath": "user/new-job",
-    "HttpMethod": "POST",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "job",
-        "Type": "TaskForge.Models.Job",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "TaskForge.Models.Job",
-        "MediaTypes": [
-          "application/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]

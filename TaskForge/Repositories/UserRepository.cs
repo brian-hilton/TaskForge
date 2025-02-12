@@ -44,12 +44,6 @@ namespace TaskForge.Repositories
             return new User { Id = newId, Name = username, Password = password, CreatedDate = currentDate, UpdatedDate = currentDate, Email = email };
         }
 
-        public async Task<User?> GetUserAsync(int id)
-        {
-            using var db = new SqlConnection(_databaseConnection);
-            return await db.QueryFirstOrDefaultAsync<User>("select * from users where id = @Id", new { Id = id });
-        }
-
         public async Task<List<User>> GetUsers(int pageSize, int pageNum)
         {
             using var db = new SqlConnection(_databaseConnection);

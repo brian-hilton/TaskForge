@@ -12,65 +12,111 @@ namespace TaskForge.Endpoints
             string dbConnection = app.Configuration.GetConnectionString("DbConnection")!;
 
             // Get all jobs for a user; return list of jobs
-            app.MapGet("/user/jobs", (int userId) =>
+            app.MapGet("/user/jobs", async (int userId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var userJobs = repo.GetUserJobs(userId);
-                return userJobs;
+                var userJobs = await repo.GetUserJobsAsync(userId);
+
+                if (userJobs == null)
+                {
+                    return Results.NotFound($"No jobs found for user with ID: {userId}");
+                }
+
+                return Results.Ok(userJobs);
             });
 
-            app.MapGet("/jobs", (int jobId) =>
+            // Get a job by its id
+            app.MapGet("/jobs", async (int jobId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var job = repo.GetJobById(jobId);
-                return job;
+                var job = await repo.GetJobByIdAsync(jobId);
+
+                if (job == null)
+                {
+                    return Results.NotFound($"No jobs found with ID: {jobId}");
+                }
+                return Results.Ok(job);
             });
 
             // Create job item in job table; return job object
-            app.MapPost("/jobs/create-job", (Job job) =>
+            app.MapPost("/jobs/create-job", async (Job job) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var newJob = repo.CreateJob(job.Name, job.Status, job.Location);
-                return newJob;
+                var newJob = await repo.CreateJobAsync(job.Name, job.Status, job.Location);
+
+                if (newJob == null)
+                {
+                    return Results.BadRequest("Failed to create job.");
+                }
+                return Results.Created($"/jobs?jobId={newJob.Id}", newJob);
             });
 
-            // Create job and assign to user id; return job object
-            app.MapPost("/user/new-job", (Job job, int userId) =>
+            // Create job with user id; return job object
+            app.MapPost("/user/create-job", async (UserJobRequest userJobRequest) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var newJob = repo.CreateJob(job.Name, job.Status, job.Location);
-                repo.AssignJob(newJob.Id, userId);
-                return newJob;
+                var newJob = await repo.UserCreateJobAsync(userJobRequest.UserId, userJobRequest.Name, userJobRequest.Status, userJobRequest.Location);
+
+                if (newJob == null)
+                {
+                    return Results.BadRequest("Failed to create job.");
+                }
+
+                return Results.Created($"/jobs?jobId={newJob.Id}", newJob);
             });
 
             // Assign an existing job to a user; 
-            app.MapPost("/jobs", (int jobId, int userId) =>
+            app.MapPost("/jobs/assign", async (int jobId, int userId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                repo.AssignJob(jobId, userId);
-                return ($"Assigned job {jobId} to user {userId}");
+                bool assigned = await repo.AssignJobAsync(jobId, userId);
+
+                if (!assigned)
+                {
+                    return Results.NotFound("Failed to assign job to user.");
+                }
+
+                return Results.Ok();
+                
             });
 
             app.MapPatch("/jobs/update-job", async (UpdateJobRequest jobRequest, int jobId) =>
             {
                 var repo = new JobRepository(dbConnection);
                 var updatedJob = await repo.UpdateJobAsync(jobRequest, jobId);
-                return updatedJob;
+
+                if (updatedJob == null)
+                { 
+                    return Results.BadRequest($"Failed to update job with ID: {jobId}"); 
+                }
+
+                return Results.Created($"jobs?jobId={jobId}" ,updatedJob);
 
             });
 
-            app.MapPatch("/jobs/clear-job", (int jobId) =>
+            app.MapPatch("/jobs/clear-job", async (int jobId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                var clearedJob = repo.ClearJob(jobId);
-                return clearedJob;
+                var clearedJob = await repo.ClearJobAsync(jobId);
+
+                if (clearedJob == null)
+                {
+                    return Results.NotFound($"Failed to find job with ID: {jobId}");
+                }
+                return Results.Ok(clearedJob);
             });
 
             // Delete job with jobId
-            app.MapDelete("/jobs/delete-job", (int jobId) =>
+            app.MapDelete("/jobs/delete-job", async (int jobId) =>
             {
                 var repo = new JobRepository(dbConnection);
-                repo.DeleteJob(jobId);
+                bool deleted = await repo.DeleteJobAsync(jobId);
+                if(!deleted)
+                {
+                    return Results.NotFound($"Failed to delete job with ID: {jobId}");
+                }
+
+                return Results.Ok();
             });
         }
     }
