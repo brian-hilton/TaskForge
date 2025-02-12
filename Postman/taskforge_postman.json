@@ -351,7 +351,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/get-user?userId=1009",
+							"raw": "http://localhost:5272/get-user?userId=1008",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -363,7 +363,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1009"
+									"value": "1008"
 								}
 							]
 						}
@@ -421,7 +421,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/user/roles?userId=2",
+							"raw": "http://localhost:5272/user/roles?userId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -434,7 +434,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "1"
 								}
 							]
 						}
@@ -490,7 +490,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/users/delete-user?userId=1012",
+							"raw": "http://localhost:5272/users/delete-user?userId=1009",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -503,7 +503,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1012"
+									"value": "1009"
 								}
 							]
 						}
