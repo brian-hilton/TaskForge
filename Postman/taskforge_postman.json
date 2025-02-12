@@ -194,7 +194,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Make 10 Krabby Patties\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"Status\": \"Not Done\",\r\n    \"DueDate\": \"2025-08-05T12:12:34Z\"\r\n}",
+							"raw": "{\r\n    \"Name\": \"Clean up\",\r\n    \"Location\": \"Krusty Krab\",\r\n    \"Status\": \"Not Done\",\r\n    \"DueDate\": \"2025-08-05T12:12:34Z\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -202,7 +202,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/jobs/update-job?jobId=8",
+							"raw": "http://localhost:5272/jobs/update-job?jobId=7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -215,7 +215,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "8"
+									"value": "7"
 								}
 							]
 						}
