@@ -289,7 +289,7 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "postRole",
+					"name": "postUserRole",
 					"id": "c65e9dee-c631-4fca-ac63-c4d524228fd5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
