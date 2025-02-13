@@ -8,57 +8,59 @@ namespace TaskForge.Repositories
 {
     public class CrewRepository : DbRepository
     {
-        private string _databaseConnection;
+        private readonly string _databaseConnection;
 
         public CrewRepository(string databaseConnection) : base(databaseConnection)
         {
             _databaseConnection = databaseConnection;
         }
-
-        public Crew CreateCrew(string name)
+        
+        public async Task<Crew?> CreateCrewAsync(string name)
         {
             using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+
             var currentTime = DateTime.UtcNow;
 
-            var newId = db.ExecuteScalar<int>(@"
-                                                insert into dbo.Crews (name, created_date, updated_date)
-                                                output inserted.id
-                                                values (@Name, @CurrentTime, @CurrentTime)",
-                                                new { Name = name, CurrentTime = currentTime });
+            var newId = await db.ExecuteScalarAsync<int>(@"
+            insert into dbo.Crews (name, created_date, updated_date)
+            output inserted.id
+            values (@Name, @CurrentTime, @CurrentTime)",
+                new { Name = name, CurrentTime = currentTime });
 
-            return new Crew { Id = newId, Name = name, CreatedDate = currentTime, UpdatedDate = currentTime };
+            return newId > 0 ? new Crew { Id = newId, Name = name, CreatedDate = currentTime, UpdatedDate = currentTime } : null;
         }
 
-        public Crew GetCrew(int crewId)
+        public async Task<Crew?> GetCrewAsync(int crewId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            var crew = db.QueryFirstOrDefault<Crew>(@"select * from dbo.Crews
-                                                      where id = @CrewId", new { CrewId = crewId});
-            if (crew == null)
-            {
-                throw new Exception($"Could not find crew for id: {crewId}");
-            }
-            return crew;
+            await db.OpenAsync();
+
+            return await db.QueryFirstOrDefaultAsync<Crew>(@"
+            select * from dbo.Crews where id = @CrewId",
+                new { CrewId = crewId });
         }
 
-        public List<Crew>? GetAllCrews()
+        public async Task<List<Crew>> GetAllCrewsAsync()
         {
             using var db = new SqlConnection(_databaseConnection);
-            var crews = db.Query<Crew>("select * from dbo.Crews").ToList();
+            await db.OpenAsync();
+
+            var crews = (await db.QueryAsync<Crew>("select * from dbo.Crews")).ToList();
             return crews;
         }
 
-        public Crew UpdateCrew(UpdateCrewRequest updateCrewRequest, int crewId)
+        public async Task<Crew?> UpdateCrewAsync(UpdateCrewRequest updateCrewRequest, int crewId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
             var query = "update Crews set ";
             var parameters = new DynamicParameters();
             bool firstField = true;
 
-            if (string.IsNullOrEmpty(updateCrewRequest.Name))
+            if (!string.IsNullOrEmpty(updateCrewRequest.Name))
             {
                 query += $"{(firstField ? "" : ", ")}name = @Name";
                 parameters.Add("Name", updateCrewRequest.Name);
@@ -75,36 +77,39 @@ namespace TaskForge.Repositories
             query += " where Id = @Id";
             parameters.Add("Id", crewId);
 
-            int rowsAffected = db.Execute(query, parameters, transaction);
+            int rowsAffected = await db.ExecuteAsync(query, parameters, transaction);
 
             if (rowsAffected != 1)
             {
-                transaction.Rollback();
-                throw new Exception("Error updating Crew");
+                await transaction.RollbackAsync();
+                return null;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
 
-            UpdateDateModifiedAsync("Crews", crewId);
+            await UpdateDateModifiedAsync("Crews", crewId);
 
-            var crew = GetCrew(crewId);
-            return crew;
+            return await GetCrewAsync(crewId);
         }
 
-        public void DeleteCrew(int crewId)
+        public async Task<bool> DeleteCrewAsync(int crewId)
         {
             using var db = new SqlConnection(_databaseConnection);
-            db.Open();
-            var transaction = db.BeginTransaction();
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
 
-            int rowsAffected = db.Execute(@"delete from dbo.Crews where id = @CrewId", new { CrewId = crewId }, transaction);
+            int rowsAffected = await db.ExecuteAsync(@"
+            delete from dbo.Crews where id = @CrewId",
+                new { CrewId = crewId }, transaction);
 
             if (rowsAffected != 1)
-            {  
-                transaction.Rollback(); throw new Exception("Could not delete crew.");
+            {
+                await transaction.RollbackAsync();
+                return false;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
+            return true;
         }
     }
 }

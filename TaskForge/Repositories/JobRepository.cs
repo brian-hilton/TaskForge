@@ -89,7 +89,6 @@ namespace TaskForge.Repositories
         public async Task<Job> GetJobByIdAsync(int jobId)
         {
             using var db = new SqlConnection(_databaseConnection);
-
             var job = await db.QueryFirstOrDefaultAsync<Job>(@"
                                                     SELECT 
                                                         id AS Id,
@@ -127,7 +126,7 @@ namespace TaskForge.Repositories
                 return null;
             }
 
-            transaction.Commit();
+            await transaction.CommitAsync();
             return await GetJobByIdAsync(jobId);
         }
         public async Task<Job> UpdateJobAsync(UpdateJobRequest updatedJob, int jobId)

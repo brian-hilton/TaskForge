@@ -123,9 +123,6 @@ namespace TaskForge.Repositories
             await UpdateDateModifiedAsync("Users", userId);
 
             return await GetUserAsync(userId);
-
-            
-
         }
 
         public async Task<bool> DeleteUserAsync(int userId)
