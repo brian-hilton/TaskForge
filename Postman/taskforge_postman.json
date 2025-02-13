@@ -283,7 +283,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Username\": \"plankton\",\r\n    \"Password\": \"plankton123\",\r\n    \"Email\": \"planklton@krustykrab.com\"\r\n}",
+							"raw": "{\r\n    \"Username\": \"Junior\",\r\n    \"Password\": \"test\",\r\n    \"Email\": \"testing@testing.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -553,7 +553,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/create-crew?name=The Boys",
+							"raw": "http://localhost:5272/crews/create-crew?name=Painters",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -566,7 +566,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "The Boys"
+									"value": "Painters"
 								}
 							]
 						}
@@ -584,7 +584,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Name\": \"Painters\",\r\n    \"SupervisorId\": 2\r\n}",
+							"raw": "{\r\n    \"Name\": \"Painters\",\r\n    \"SupervisorId\": 1015\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -592,7 +592,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/crews/update-crew?crewId=1002",
+							"raw": "http://localhost:5272/crews/update-crew?crewId=1003",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -605,7 +605,7 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "1002"
+									"value": "1003"
 								}
 							]
 						}
@@ -748,7 +748,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/add-member?crewId=2&userId=7&role=worker",
+							"raw": "http://localhost:5272/crews/add-member?crewId=1003&userId=1015&role=supervisor",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -761,15 +761,15 @@
 							"query": [
 								{
 									"key": "crewId",
-									"value": "2"
+									"value": "1003"
 								},
 								{
 									"key": "userId",
-									"value": "7"
+									"value": "1015"
 								},
 								{
 									"key": "role",
-									"value": "worker"
+									"value": "supervisor"
 								}
 							]
 						}
