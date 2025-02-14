@@ -688,7 +688,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/crews/get-all-crews-for-user?userId=1000",
+							"raw": "http://localhost:5272/crews/get-all-crews-for-user?userId=1015",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -701,7 +701,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1000"
+									"value": "1015"
 								}
 							]
 						}
