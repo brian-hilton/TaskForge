@@ -313,7 +313,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5272/get-user?userId=1009",
+							"raw": "http://localhost:5272/get-user?userId=1015",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -325,7 +325,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1009"
+									"value": "1015"
 								}
 							]
 						}
@@ -483,7 +483,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"b\",\r\n    \"password\": \"b\"\r\n}",
+							"raw": "{\r\n    \"email\": \"testing@testing.com\",\r\n    \"password\": \"testing\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
