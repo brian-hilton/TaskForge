@@ -495,14 +495,24 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "postUserAndUserRole",
 					"id": "2250b48b-5a22-4a41-8f2e-85d8f05808cb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"John\",\r\n    \"Password\": \"john\",\r\n    \"Email\": \"john@john.gov\",\r\n    \"Role\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/register-user"
 					},
 					"response": []
 				}
