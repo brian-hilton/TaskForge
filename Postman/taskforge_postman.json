@@ -493,6 +493,18 @@
 						"url": "http://localhost:5272/login"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "2250b48b-5a22-4a41-8f2e-85d8f05808cb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "8dc2ff8d-26ed-4b7e-8a35-bb44384c7c3c"
