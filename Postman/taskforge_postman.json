@@ -777,6 +777,44 @@
 					"response": []
 				},
 				{
+					"name": "postCrewMember2",
+					"id": "b67ba18e-9149-43a1-bd1a-defe2b10e60c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5272/crews/create-member?crewId=1&userId=1&roleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5272",
+							"path": [
+								"crews",
+								"create-member"
+							],
+							"query": [
+								{
+									"key": "crewId",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "roleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "updateCrewMemberRole",
 					"id": "3790bf07-7875-4f02-8b4e-5b7173acadb9",
 					"protocolProfileBehavior": {
