@@ -243,6 +243,18 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllJobs",
+					"id": "b6a3555c-b6ac-4e69-9d6d-b1bc7295c643",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "d650ac92-9630-4832-9d51-21695ee367ee"
