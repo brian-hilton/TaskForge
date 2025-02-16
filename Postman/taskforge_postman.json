@@ -1047,6 +1047,28 @@
 						"url": "http://0.0.0.0:5000/login"
 					},
 					"response": []
+				},
+				{
+					"name": "Login (new url)",
+					"id": "5fdd82f0-1909-43c7-bc77-f6b611173865",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"me@me.gov\",\r\n    \"password\": \"me\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://192.168.1.110:5000/login"
+					},
+					"response": []
 				}
 			],
 			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
