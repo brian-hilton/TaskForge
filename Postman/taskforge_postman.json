@@ -252,7 +252,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://localhost:5272/jobs/all-jobs"
 					},
 					"response": []
 				}
