@@ -64,12 +64,35 @@ namespace TaskForge.Repositories
             using var db = new SqlConnection(_databaseConnection);
             await db.OpenAsync();
 
-            var roles = await (db.QueryAsync<Role>(@"
+            var userRoles = await (db.QueryAsync<Role>(@"
                                         select R.* 
                                         from dbo.UserRoles as UR 
                                         join dbo.Roles as R on UR.role_id = R.id 
                                         where UR.[user_id] = @UserId",
                                         new { UserId = id }));
+            return userRoles.ToList();
+        }
+
+        // get all of the UserRoles for various filtering purposes
+        public async Task<List<UserRole>> GetAllUserRolesAsync()
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+            var userRoles = await db.QueryAsync<UserRole>("select * from dbo.UserRoles");
+            return userRoles.ToList();
+        }
+
+        // Get all roles from the role table
+        public async Task<List<Role>> GetRolesAsync()
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+
+            var roles = await db.QueryAsync<Role>(@"select * from dbo.Roles");
+            if (roles == null)
+            {
+                return null;
+            }
             return roles.ToList();
         }
 
@@ -169,6 +192,31 @@ namespace TaskForge.Repositories
             await UpdateDateModifiedAsync("Users", userId);
 
             return userRole;
+        }
+
+        // Create entry in UserRoles and Users table at the same time
+        public async Task<User> PostUserAndUserRole(string username, string password, string email, int roleId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+
+            var role = await db.QueryFirstOrDefaultAsync<Role>(@"select id from dbo.Roles where id = @RoleId",  new { RoleId = roleId });
+            if (role == null) 
+            { 
+                return null;
+            }
+
+            var user = await CreateUserAsync(username, password, email);
+            if (user == null) 
+            {
+                return null;
+            }
+
+            var userId = user.Id;
+            int newId = await db.ExecuteScalarAsync<int>(@"insert into dbo.UserRoles (user_id, role_id)
+                                                                  output inserted.id
+                                                                  values (@UserId, @RoleId)", new { UserId = userId, RoleId = roleId });
+            return user;
         }
     }
 }

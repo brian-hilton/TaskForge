@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__2",
+    "Method": "\u003CMapUserEndpoints\u003Eb__3",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -17,7 +17,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__6",
+    "Method": "\u003CMapUserEndpoints\u003Eb__7",
     "RelativePath": "create-user",
     "HttpMethod": "POST",
     "IsController": false,
@@ -109,7 +109,39 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__6",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "RelativePath": "crews/create-member",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__7",
     "RelativePath": "crews/delete-all-user-memberships",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -153,7 +185,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__5",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__6",
     "RelativePath": "crews/delete-member",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -295,7 +327,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.CrewMemberEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__4",
+    "Method": "\u003CMapCrewMemberEndpoints\u003Eb__5",
     "RelativePath": "crews/update-crew-member-role",
     "HttpMethod": "PATCH",
     "IsController": false,
@@ -312,6 +344,22 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapUserEndpoints\u003Eb__2",
+    "RelativePath": "get-all-user-roles",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Void",
@@ -388,7 +436,23 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__4",
+    "Method": "\u003CMapJobEndpoints\u003Eb__2",
+    "RelativePath": "jobs/all-jobs",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapJobEndpoints\u003Eb__5",
     "RelativePath": "jobs/assign",
     "HttpMethod": "POST",
     "IsController": false,
@@ -415,7 +479,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__6",
+    "Method": "\u003CMapJobEndpoints\u003Eb__7",
     "RelativePath": "jobs/clear-job",
     "HttpMethod": "PATCH",
     "IsController": false,
@@ -437,7 +501,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__2",
+    "Method": "\u003CMapJobEndpoints\u003Eb__3",
     "RelativePath": "jobs/create-job",
     "HttpMethod": "POST",
     "IsController": false,
@@ -459,7 +523,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__7",
+    "Method": "\u003CMapJobEndpoints\u003Eb__8",
     "RelativePath": "jobs/delete-job",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -481,7 +545,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__5",
+    "Method": "\u003CMapJobEndpoints\u003Eb__6",
     "RelativePath": "jobs/update-job",
     "HttpMethod": "PATCH",
     "IsController": false,
@@ -508,7 +572,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__4",
+    "Method": "\u003CMapUserEndpoints\u003Eb__5",
     "RelativePath": "login",
     "HttpMethod": "POST",
     "IsController": false,
@@ -530,7 +594,29 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__5",
+    "Method": "\u003CMapUserEndpoints\u003Eb__8",
+    "RelativePath": "register-user",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerUserRequest",
+        "Type": "TaskForge.Models.RegisterUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapUserEndpoints\u003Eb__6",
     "RelativePath": "user/add-role",
     "HttpMethod": "POST",
     "IsController": false,
@@ -552,7 +638,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.JobEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapJobEndpoints\u003Eb__3",
+    "Method": "\u003CMapJobEndpoints\u003Eb__4",
     "RelativePath": "user/create-job",
     "HttpMethod": "POST",
     "IsController": false,
@@ -596,7 +682,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__3",
+    "Method": "\u003CMapUserEndpoints\u003Eb__4",
     "RelativePath": "user/roles",
     "HttpMethod": "GET",
     "IsController": false,
@@ -618,7 +704,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__8",
+    "Method": "\u003CMapUserEndpoints\u003Eb__10",
     "RelativePath": "users/delete-user",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -640,7 +726,7 @@
   },
   {
     "ContainingType": "TaskForge.Endpoints.UserEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMapUserEndpoints\u003Eb__7",
+    "Method": "\u003CMapUserEndpoints\u003Eb__9",
     "RelativePath": "users/update-user",
     "HttpMethod": "PATCH",
     "IsController": false,

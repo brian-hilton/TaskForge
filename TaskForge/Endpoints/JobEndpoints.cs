@@ -38,6 +38,20 @@ namespace TaskForge.Endpoints
                 return Results.Ok(job);
             });
 
+            // Get all jobs
+            app.MapGet("/jobs/all-jobs", async () =>
+            {
+                var repo = new JobRepository(dbConnection);
+                var jobs = await repo.GetAllJobsAsync();
+
+                if (jobs == null)
+                {
+                    return Results.NotFound("No jobs found.");
+                }
+
+                return Results.Ok(jobs);
+            });
+
             // Create job item in job table; return job object
             app.MapPost("/jobs/create-job", async (Job job) =>
             {

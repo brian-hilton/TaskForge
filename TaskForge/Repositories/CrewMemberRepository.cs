@@ -173,5 +173,53 @@ namespace TaskForge.Repositories
             await transaction.CommitAsync();
             return true;
         }
+
+        public async Task<CrewMember> PostCrewMemberAsync(int userId, int crewId, int roleId)
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+            var transaction = await db.BeginTransactionAsync();
+
+            // Validate user
+            var user = await db.QueryFirstOrDefaultAsync<User>(@"select * from dbo.Users
+                                                            where user_id = @UserId", new { UserId = userId }, transaction);
+            if (user == null) 
+            {
+                await transaction.RollbackAsync();
+                return null;
+            }
+
+            // Validate crewId
+            var crew = await db.QueryFirstOrDefaultAsync<Crew>(@"select * from dbo.Crews where crew_id = @CrewId", new { CrewId = crewId }, transaction);
+            if (crew == null)
+            {
+                await transaction.RollbackAsync();
+                return null;
+            }
+
+            // Validate Role; 
+            var role = await db.QueryFirstOrDefaultAsync<Role>(@"select name from dbo.Roles where role_id = @RoleId", new { RoleId = roleId }, transaction);
+            if (role == null)
+            {
+                await transaction.RollbackAsync();
+                return null;
+            }
+
+            var roleName = role.Name;
+
+            int rowsAffected = await db.ExecuteAsync(@"insert into dbo.UserRoles (crew_id, user_id, role) 
+                                                        values (@CrewId, @UserId, @Role)", new { CrewId = crewId, UserId = userId, Role = roleName }, transaction);
+
+            if (rowsAffected != 0)
+            {
+                await transaction.RollbackAsync();
+                return null;
+            }
+
+            await transaction.CommitAsync();
+            return new CrewMember { CrewId = crewId, UserId = userId, Role = roleName };
+
+
+        }
     }
 }

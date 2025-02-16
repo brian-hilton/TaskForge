@@ -39,6 +39,17 @@ namespace TaskForge.Endpoints
                 return Results.Ok(users);
             });
 
+            app.MapGet("/get-all-user-roles", async () =>
+            {
+                var repo = new UserRepository(dbConnection);
+                var userRoles = await repo.GetAllUserRolesAsync();
+                if (userRoles == null)
+                {
+                    return Results.NotFound("no user roles found.");
+                }
+                return Results.Ok(userRoles);
+            });
+
             // This one set to root for testing purposes
             app.MapGet("/", () =>
             {
@@ -99,6 +110,18 @@ namespace TaskForge.Endpoints
                 }
 
                 return Results.Created($"/get-user?userId={newUser.Id}", newUser);
+            });
+
+            app.MapPost("/register-user", async (RegisterUserRequest registerUserRequest) =>
+            {
+                var repo = new UserRepository(dbConnection);
+                var user = await repo.PostUserAndUserRole(registerUserRequest.Username, registerUserRequest.Password, registerUserRequest.Email, registerUserRequest.Role);
+
+                if (user == null)
+                {
+                    return Results.BadRequest("Failed to create user.");
+                }
+                return Results.Created($"/get-user?userId={user.Id}", user);
             });
 
             app.MapPatch("/users/update-user", async (UpdateUserRequest userRequest, int userId) =>

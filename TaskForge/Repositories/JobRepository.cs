@@ -31,6 +31,13 @@ namespace TaskForge.Repositories
             return newJob;
         }
 
+        public async Task<List<Job>> GetAllJobsAsync()
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            var jobs = await db.QueryAsync<Job>(@"select * from dbo.Jobs");
+            return jobs.ToList();
+        }
+
         public async Task<Job> UserCreateJobAsync(int userId, string name, string status, string location)
         {
             using var db = new SqlConnection(_databaseConnection);

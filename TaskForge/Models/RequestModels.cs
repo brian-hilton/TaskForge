@@ -27,6 +27,14 @@ namespace TaskForge.Models
         public string Email { get; set; }
     }
 
+    public class RegisterUserRequest
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public int Role { get; set; } = 2;
+    }
+
     public class UserJobRequest
     {
         public int UserId { get; set; }

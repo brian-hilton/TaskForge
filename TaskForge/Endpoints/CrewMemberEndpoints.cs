@@ -16,7 +16,7 @@ namespace TaskForge.Endpoints
             {
                 var repo = new CrewMemberRepository(dbConnection);
                 var crewMembers = await repo.GetAllCrewMembersByCrewAsync(crewId);
-                if (crewMembers == null) 
+                if (crewMembers == null)
                 {
                     return Results.NotFound($"Crewmembers for crew ID {crewId} not found.");
                 }
@@ -55,6 +55,19 @@ namespace TaskForge.Endpoints
                     return Results.BadRequest($"Failed to create crew member.");
                 }
                 return Results.Ok(newCrewMember);
+            });
+
+            // Post using role id instead of passed in string
+            app.MapPost("crews/create-member", async (int crewId, int userId, int roleId) => 
+            {
+                var repo = new CrewMemberRepository(dbConnection);
+                var newCrewMember = await repo.PostCrewMemberAsync(crewId, userId, roleId);
+                if (newCrewMember == null)
+                {
+                    return Results.BadRequest($"Failed to create new crew member.");
+                }
+                return Results.Ok(newCrewMember);
+
             });
 
             app.MapPatch("crews/update-crew-member-role", async (int userId, int roleId) => 
