@@ -528,6 +528,19 @@
 						"url": "http://localhost:5272/register-user"
 					},
 					"response": []
+				},
+				{
+					"name": "getAllUserRoles",
+					"id": "9a6336d8-714d-45be-9b63-1031c59ff8ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5272/get-all-user-roles"
+					},
+					"response": []
 				}
 			],
 			"id": "8dc2ff8d-26ed-4b7e-8a35-bb44384c7c3c"
