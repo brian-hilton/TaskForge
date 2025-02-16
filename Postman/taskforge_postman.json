@@ -981,6 +981,75 @@
 				}
 			],
 			"id": "6a591061-09f5-49ea-aa47-1577ab227f54"
+		},
+		{
+			"name": "NewUrl",
+			"item": [
+				{
+					"name": "getUser",
+					"id": "83cc7db5-a8a1-444e-87aa-7b3bea270c18",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:5000/get-user?userId=1015",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "5000",
+							"path": [
+								"get-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1015"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Copy",
+					"id": "f2b2ebd8-e4ed-45d9-821a-641fb58e2e1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testing@testing.com\",\r\n    \"password\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5272/login"
+					},
+					"response": []
+				}
+			],
+			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
 		}
 	]
 }
