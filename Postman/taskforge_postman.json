@@ -505,7 +505,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Username\": \"John\",\r\n    \"Password\": \"john\",\r\n    \"Email\": \"john@john.gov\",\r\n    \"Role\": 2\r\n}",
+							"raw": "{\r\n    \"Username\": \"John\",\r\n    \"Password\": \"john\",\r\n    \"Email\": \"john@john.gov\",\r\n    \"Role\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
