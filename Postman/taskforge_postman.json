@@ -1004,13 +1004,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:5000/get-user?userId=1015",
+							"raw": "http://192.168.68.110:5000/get-user?userId=1015",
 							"protocol": "http",
 							"host": [
-								"0",
-								"0",
-								"0",
-								"0"
+								"192",
+								"168",
+								"68",
+								"110"
 							],
 							"port": "5000",
 							"path": [
@@ -1028,28 +1028,6 @@
 				},
 				{
 					"name": "Login",
-					"id": "f2b2ebd8-e4ed-45d9-821a-641fb58e2e1f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"me@me.gov\",\r\n    \"password\": \"me\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://0.0.0.0:5000/login"
-					},
-					"response": []
-				},
-				{
-					"name": "Login (new url)",
 					"id": "5fdd82f0-1909-43c7-bc77-f6b611173865",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1066,7 +1044,7 @@
 								}
 							}
 						},
-						"url": "http://192.168.1.110:5000/login"
+						"url": "http://192.168.68.110:5000/login"
 					},
 					"response": []
 				}
