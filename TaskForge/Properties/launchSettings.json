@@ -5,10 +5,14 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5272",
+      "applicationUrl": "http://192.168.68.110:5000;https://192.168.68.110:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }
 }
+
+// http://localhost:5272
+// the url used in cors middleware to access the frontend: http://localhost:5173
+// frontend url using LAN: http://192.168.68.110:5173

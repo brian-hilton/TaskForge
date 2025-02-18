@@ -22,16 +22,18 @@ namespace TaskForge
                 options.Cookie.IsEssential = true; 
             });
 
-            builder.Services.AddAuthentication().AddCookie();
-            builder.Services.AddAuthorization(); 
+            var MyAllowSpecificOrigins = "AllowFrontend";
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowFrontend",
-                    policy => policy.WithOrigins("http://localhost:5173")
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    policy => policy.WithOrigins("http://localhost:5173", "http://192.168.68.110:5173")
                                     .AllowAnyMethod()
                                     .AllowAnyHeader()
-                                    .AllowCredentials());
+                                    .AllowCredentials()); 
             });
+            builder.Services.AddAuthentication().AddCookie();
+            builder.Services.AddAuthorization(); 
+            
 
             string dbConnection = builder.Configuration.GetConnectionString("DbConnection")!;
             var app = builder.Build();
@@ -49,6 +51,11 @@ namespace TaskForge
             app.UseSession();
             app.UseAuthorization();
             app.MapOpenApi();
+            app.Use(async (context, next) =>
+            {
+                Console.WriteLine($"Incoming request: {context.Request.Method} {context.Request.Path}");
+                await next();
+            });
             app.MapUserEndpoints();
             app.MapJobEndpoints();
             app.MapCrewEndpoints();
