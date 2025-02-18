@@ -1047,6 +1047,18 @@
 						"url": "http://192.168.68.110:5000/login"
 					},
 					"response": []
+				},
+				{
+					"name": "getAllRoles",
+					"id": "2e2366f0-6003-4b6c-b93e-f352783529fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
