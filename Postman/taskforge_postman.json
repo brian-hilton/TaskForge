@@ -1060,6 +1060,19 @@
 						"url": "http://192.168.68.110:5000/roles"
 					},
 					"response": []
+				},
+				{
+					"name": "getAllUserRoles",
+					"id": "21418f93-1baa-419c-9d6a-1a7e44fa6d8a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://192.168.68.110:5000/get-all-user-roles"
+					},
+					"response": []
 				}
 			],
 			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
