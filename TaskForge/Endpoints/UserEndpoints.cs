@@ -70,6 +70,22 @@ namespace TaskForge.Endpoints
                 return Results.Ok(roles);
             });
 
+            // Get all Roles from the table so the frontend can match role id to the role name
+            app.MapGet("/roles", async () =>
+            {
+                var repo = new UserRepository(dbConnection);
+                var roles = await repo.GetAllRolesAsync();
+                if (roles.Count == 0 || roles == null)
+                {
+                    return Results.NotFound("Could not acquire role data.");
+                }
+
+                else
+                {
+                    return Results.Ok(roles);
+                }
+            });
+
             // Login endpoint
             app.MapPost("/login", async (LoginRequest loginRequest) =>
             {

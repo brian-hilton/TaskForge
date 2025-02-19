@@ -218,5 +218,14 @@ namespace TaskForge.Repositories
                                                                   values (@UserId, @RoleId)", new { UserId = userId, RoleId = roleId });
             return user;
         }
+
+        public async Task<List<Role>> GetAllRolesAsync() 
+        {
+            using var db = new SqlConnection(_databaseConnection);
+            await db.OpenAsync();
+
+            var roles = await db.QueryAsync<Role>(@"select * from dbo.Roles");
+            return roles.ToList();
+        }
     }
 }
