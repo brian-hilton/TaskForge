@@ -1073,6 +1073,28 @@
 						"url": "http://192.168.68.110:5000/get-all-user-roles"
 					},
 					"response": []
+				},
+				{
+					"name": "postUserAndUserRole",
+					"id": "94330cc7-6352-4d37-8320-68a98c0f402d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"Junior\",\r\n    \"Password\": \"junior\",\r\n    \"Email\": \"junior@jem.gov\",\r\n    \"Role\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://192.168.68.110:5000/register-user"
+					},
+					"response": []
 				}
 			],
 			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
