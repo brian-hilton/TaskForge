@@ -1004,7 +1004,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.68.110:5000/get-user?userId=2023",
+							"raw": "http://192.168.68.110:5000/get-user?userId=2019",
 							"protocol": "http",
 							"host": [
 								"192",
@@ -1019,7 +1019,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "2023"
+									"value": "2019"
 								}
 							]
 						}
@@ -1085,7 +1085,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Username\": \"Junior\",\r\n    \"Password\": \"junior\",\r\n    \"Email\": \"junior@jem.gov\",\r\n    \"Role\": 1\r\n}",
+							"raw": "{\r\n    \"Username\": \"Jr\",\r\n    \"Password\": \"jr\",\r\n    \"Email\": \"junior@jem.gov\",\r\n    \"Role\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
