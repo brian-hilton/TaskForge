@@ -1095,6 +1095,38 @@
 						"url": "http://192.168.68.110:5000/register-user"
 					},
 					"response": []
+				},
+				{
+					"name": "getJob",
+					"id": "4091eebc-d4c8-45c2-bbae-4367b5dcf91e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.68.110:5000/jobs?jobId=1009",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"68",
+								"110"
+							],
+							"port": "5000",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "1009"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "2cb15ca0-f913-43f7-8986-aa20ea9f0f4e"
