@@ -465,7 +465,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5272/users/delete-user?userId=1",
+							"raw": "http://localhost:5272/users/delete-user?userId=3009",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -478,7 +478,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "3009"
 								}
 							]
 						}
