@@ -1106,7 +1106,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://192.168.68.110:5000/jobs?jobId=2022",
+							"raw": "http://192.168.68.110:5000/jobs?jobId=2021",
 							"protocol": "http",
 							"host": [
 								"192",
@@ -1121,7 +1121,7 @@
 							"query": [
 								{
 									"key": "jobId",
-									"value": "2022"
+									"value": "2021"
 								}
 							]
 						}
